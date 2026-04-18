@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Myco Signal"
+run/main_scene="uid://rmborfq6y5dt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [physics]
 
