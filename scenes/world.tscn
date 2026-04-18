@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://rmborfq6y5dt"]
 
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/phrase_object.gd" id="2_rwgxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 
 [node name="World" type="Node2D" unique_id=1635672157]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2074238337]
 
 [node name="Player" parent="." unique_id=1779298022 instance=ExtResource("1_nnsk1")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1798075947 node_paths=PackedStringArray("shape")]
+position = Vector2(69, 1)
+script = ExtResource("2_rwgxs")
+shape = NodePath("CollisionShape2D")
+phrase_text = " Нашел каку"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1700106110]
+shape = SubResource("RectangleShape2D_nnsk1")
+debug_color = Color(0.9304251, 2.9648543e-05, 0.6588278, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

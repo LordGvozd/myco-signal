@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 100.0
 var direction: Vector2 = Vector2.ZERO
@@ -47,6 +47,12 @@ func SetState() -> bool:
 	var new_state: String = "idle" if direction == Vector2.ZERO else "walk"
 	if new_state == state:
 		return false
+	
+	if new_state == "walk":
+		Bus.create_event(PlayerStartMove.new())
+	else:
+		Bus.create_event(PlayerStopMove.new())
+		
 	state = new_state
 	return true
 
