@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dllcejf7em3u4"
+path="res://.godot/imported/Modern Biology - Mushroom Music (mp3cut.net) (6).mp3-ec26a97b5a20fc1e441a818bbfeac17f.mp3str"
+
+[deps]
+
+source_file="res://sounds/Modern Biology - Mushroom Music (mp3cut.net) (6).mp3"
+dest_files=["res://.godot/imported/Modern Biology - Mushroom Music (mp3cut.net) (6).mp3-ec26a97b5a20fc1e441a818bbfeac17f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

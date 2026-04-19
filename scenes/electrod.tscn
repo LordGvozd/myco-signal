@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://ch7jb2tu42kba"]
+
+[ext_resource type="Script" uid="uid://cf3cnwgg8l3rk" path="res://scripts/ui/electrod/electrod_panel.gd" id="1_wxul6"]
+[ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="2_vkvcl"]
+[ext_resource type="Script" uid="uid://gwu4stk0x4n0" path="res://scripts/AudioSampler.gd" id="2_ybtbm"]
+[ext_resource type="AudioStream" uid="uid://dllcejf7em3u4" path="res://sounds/Modern Biology - Mushroom Music (mp3cut.net) (6).mp3" id="4_85x3y"]
+[ext_resource type="Script" uid="uid://d1o1t64wwqjtk" path="res://scripts/ui/electrod/spectrogramma.gd" id="5_85x3y"]
+[ext_resource type="Texture2D" uid="uid://yiik17qkj2jr" path="res://sprites/button.png" id="6_tf5kn"]
+[ext_resource type="Script" uid="uid://bbvlmvj8t07ni" path="res://scripts/sound_button.gd" id="7_ut64i"]
+
+[sub_resource type="Resource" id="Resource_ut64i"]
+script = ExtResource("2_vkvcl")
+melody = Array[int]([24, 4, 26, 4, 30, 8, 40])
+metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
+
+[sub_resource type="Environment" id="Environment_tf5kn"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 0
+
+[node name="Electrod" type="Control" unique_id=1868941164 node_paths=PackedStringArray("buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wxul6")
+buttons = [NodePath("TextureButton"), NodePath("TextureButton2"), NodePath("TextureButton3")]
+melody = SubResource("Resource_ut64i")
+buttons_colors = Array[Color]([Color(1.0832684, 1.8247963, 0.88393724, 1)])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=361755177]
+stream = ExtResource("4_85x3y")
+script = ExtResource("2_ybtbm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=328368838]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33100003
+anchor_top = 0.1
+anchor_right = 0.96400005
+anchor_bottom = 0.393
+offset_left = 0.19998169
+offset_right = -0.2000122
+offset_bottom = 0.19999695
+color = Color(0, 0, 0, 1)
+
+[node name="Spectrogramma" type="Control" parent="." unique_id=121548900]
+layout_mode = 1
+anchor_left = 0.33
+anchor_top = 0.143
+anchor_right = 0.961
+anchor_bottom = 0.367
+offset_left = 3.0
+offset_top = 0.19999695
+offset_right = -1.8000488
+offset_bottom = -0.2000122
+script = ExtResource("5_85x3y")
+line_color = Color(0, 2.3133948, 0, 1)
+line_width = 1.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=462287516]
+environment = SubResource("Environment_tf5kn")
+
+[node name="Button" type="Button" parent="." unique_id=1145140313]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 241.0
+offset_right = 148.0
+offset_bottom = 359.0
+text = "PLAY"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1903511839]
+modulate = Color(0.20906562, 0.4822746, 0.8844545, 1)
+layout_mode = 0
+offset_left = 106.0
+offset_top = 414.0
+offset_right = 170.0
+offset_bottom = 478.0
+texture_normal = ExtResource("6_tf5kn")
+script = ExtResource("7_ut64i")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1139918701]
+modulate = Color(0.7547807, 0, 0, 1)
+layout_mode = 0
+offset_left = 201.0
+offset_top = 416.0
+offset_right = 265.0
+offset_bottom = 480.0
+texture_normal = ExtResource("6_tf5kn")
+script = ExtResource("7_ut64i")
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=208327809]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 417.0
+offset_right = 369.0
+offset_bottom = 481.0
+texture_normal = ExtResource("6_tf5kn")
+script = ExtResource("7_ut64i")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
