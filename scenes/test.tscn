@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clhdkc4gsj8vi"]
 
-[ext_resource type="Script" path="res://scripts/test.gd" id="1_errlg"]
+[ext_resource type="Script" uid="uid://vi6c1rmcgv0v" path="res://scripts/test.gd" id="1_errlg"]
 [ext_resource type="Script" uid="uid://b43eavkqatsqq" path="res://scripts/events_core/visible_on.gd" id="2_bl13t"]
 
 [node name="Test" type="Node2D" unique_id=1054070892]
