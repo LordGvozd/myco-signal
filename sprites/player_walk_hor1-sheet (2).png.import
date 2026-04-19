@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5a1wt5c5jh5k"
-path="res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"
+uid="uid://dgm2c3ocsbss3"
+path="res://.godot/imported/player_walk_hor1-sheet (2).png-e75a613d97684ec0b31219f217a82063.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"]
+source_file="res://sprites/player_walk_hor1-sheet (2).png"
+dest_files=["res://.godot/imported/player_walk_hor1-sheet (2).png-e75a613d97684ec0b31219f217a82063.ctex"]
 
 [params]
 
