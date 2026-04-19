@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0me42v34erue" path="res://sprites/tile.png" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/InteractableArea.gd" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://c7l73jgnsqr" path="res://scripts/camera_2d.gd" id="4_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("1_4wyf3")
@@ -45,6 +46,10 @@ phrase_text = " Нашел каку"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestArea" unique_id=1700106110]
 shape = SubResource("RectangleShape2D_nnsk1")
 debug_color = Color(0.9304251, 2.9648543e-05, 0.6588278, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=542666050]
+zoom = Vector2(3, 3)
+script = ExtResource("4_k0juu")
 
 [connection signal="body_entered" from="TestArea" to="TestArea" method="_on_body_entered"]
 [connection signal="body_exited" from="TestArea" to="TestArea" method="_on_body_exited"]

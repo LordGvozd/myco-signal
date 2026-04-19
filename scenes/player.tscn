@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://8ncw5stcx44" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://6fdnfdvjilud" path="res://sprites/player_idle_down1-sheet.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://b5a1wt5c5jh5k" path="res://sprites/shadow.png" id="2_smehm"]
 [ext_resource type="Texture2D" uid="uid://mlyvn0o3o5wh" path="res://sprites/player_walk_down1-sheet.png" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://gh1he0gwvuwk" path="res://scripts/ui/player_phrase.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bicykuydi5pgv" path="res://sprites/player_walk_hor1-sheet.png" id="4_fjrip"]
 [ext_resource type="Script" uid="uid://bxdg73dnctp1i" path="res://scripts/ui/hint.gd" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://uwhf1l8uobb4" path="res://sprites/player_walk_top1-sheet.png" id="5_smehm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ur7pv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chuli"]
 height = 28.0
@@ -467,6 +470,15 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1779298022 groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=292313141]
+modulate = Color(1, 1, 1, 0.4627451)
+self_modulate = Color(0.41874722, 0.00012475882, 0.42045853, 0.345)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ur7pv")
+position = Vector2(-7.1525574e-07, 12)
+scale = Vector2(0.68750006, 0.375)
+texture = ExtResource("2_smehm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1581354019 groups=["player"]]
 shape = SubResource("CapsuleShape2D_chuli")
