@@ -5,8 +5,19 @@ var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN 
 var state: String = "idle"
 
+var enable_to_move: bool = true
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready() -> void:
+	Bus.subscribe(OpenElectrod, make_player_invalid)
+	Bus.subscribe(CloseElectrod, make_player_great_again)
+	
+func make_player_invalid(e):
+	enable_to_move = false
+	
+func make_player_great_again(e):
+	enable_to_move = true
 
 func _physics_process(delta: float) -> void:
 	direction = Vector2(
@@ -14,10 +25,15 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("ui_up", "ui_down")
 	).normalized() 
 	
+	if not enable_to_move:
+		direction = Vector2.ZERO
+	
 	if SetState() or SetDirection():
 		UpdateAnimation()
 
 	velocity = direction * SPEED
+	
+	
 	move_and_slide()
 		
 		
@@ -37,7 +53,7 @@ func SetDirection() -> bool:
 	
 	cardinal_direction = new_dir
 
-	if cardinal_direction.x != 0:
+	if cardinal_direction.x != 0 and enable_to_move:
 		animated_sprite.scale.x = -1.0 if cardinal_direction == Vector2.LEFT else 1.0
 		
 	return true

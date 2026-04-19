@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddoloeoc4v0pw"
+path="res://.godot/imported/Snoop Dogg meme 4.mp3-3df422dfa3566ca9f83ab3dcacb25fda.mp3str"
+
+[deps]
+
+source_file="res://sounds/Snoop Dogg meme 4.mp3"
+dest_files=["res://.godot/imported/Snoop Dogg meme 4.mp3-3df422dfa3566ca9f83ab3dcacb25fda.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
