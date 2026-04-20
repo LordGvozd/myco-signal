@@ -16,6 +16,7 @@
 [ext_resource type="VideoStream" uid="uid://nfdmunffsjku" path="res://sounds/boom00000000.ogv" id="11_3v2ag"]
 [ext_resource type="Shader" uid="uid://3b7syhxjj03c" path="res://shader/player.gdshader" id="11_jej6c"]
 [ext_resource type="Script" uid="uid://dthchobqyw2f4" path="res://scripts/matadora_effect.gd" id="13_f1ej7"]
+[ext_resource type="Script" uid="uid://b7rqh5ollr2pc" path="res://scripts/tutorial_panel.gd.gd" id="16_60mlk"]
 [ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="16_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://dc1adjtk7jj22" path="res://sounds/grass_steps.mp3" id="18_fulsm"]
 [ext_resource type="Script" uid="uid://b4s21ptfxplk3" path="res://scripts/player_sound.gd" id="19_4r5pv"]
@@ -612,6 +613,33 @@ animation = &"walk_up"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509683948]
 
+[node name="Tutor_ui" type="Control" parent="CanvasLayer" unique_id=677804028]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_60mlk")
+
+[node name="Button" type="Button" parent="CanvasLayer/Tutor_ui" unique_id=796797394]
+z_index = 12
+layout_mode = 0
+offset_left = 354.0
+offset_top = 410.0
+offset_right = 505.0
+offset_bottom = 464.0
+text = "все понял
+забрать электрод"
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutor_ui" unique_id=1312179544]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 276.0
+offset_right = 487.0
+offset_bottom = 299.0
+text = "тут туториал"
+
 [node name="ThunderScreen" type="ColorRect" parent="CanvasLayer" unique_id=1903817149]
 anchors_preset = 15
 anchor_right = 1.0
@@ -712,3 +740,5 @@ visible = false
 [node name="Steps" type="AudioStreamPlayer2D" parent="." unique_id=1726319817]
 stream = ExtResource("18_fulsm")
 script = ExtResource("19_4r5pv")
+
+[connection signal="pressed" from="CanvasLayer/Tutor_ui/Button" to="CanvasLayer/Tutor_ui" method="_on_button_pressed"]

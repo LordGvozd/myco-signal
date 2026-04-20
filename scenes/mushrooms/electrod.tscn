@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://pfxp43xnr271"]
 
 [ext_resource type="Texture2D" uid="uid://ycgahm3c748w" path="res://sprites/objects/electric.png" id="1_0h7ud"]
+[ext_resource type="Script" uid="uid://d2spmloxfri4n" path="res://scripts/mushroom0.gd" id="2_rmufm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwkep"]
 size = Vector2(20, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu3mh"]
+size = Vector2(41.5, 44)
 
 [node name="Electrod" type="Node2D" unique_id=2104509306]
 
@@ -16,3 +20,9 @@ texture = ExtResource("1_0h7ud")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=548405664]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_bwkep")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1511005378]
+script = ExtResource("2_rmufm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1014210841]
+shape = SubResource("RectangleShape2D_qu3mh")

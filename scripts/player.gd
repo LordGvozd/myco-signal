@@ -15,6 +15,8 @@ var enable_to_move: bool = true
 func _ready() -> void:
 	Bus.subscribe(OpenElectrod, make_player_invalid)
 	Bus.subscribe(CloseElectrod, make_player_great_again)
+	Bus.subscribe(ShowTutorialEvent, make_player_invalid)  
+	Bus.subscribe(TutorialClosedEvent, make_player_great_again)
 	
 	$Camera2D.world_size = world_size
 	$Camera2D.limit_camera()

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dhls283o8fatw" path="res://sprites/mushrooms/mushroom2.png" id="1_lxxhs"]
 [ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_hw3q4"]
 [ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_82725"]
-[ext_resource type="AudioStream" uid="uid://b8demafdvf5qg" path="res://sounds/white_noise.mp3" id="4_hw3q4"]
-[ext_resource type="Material" uid="uid://bih36mtlvlan0" path="res://shader/vhs.tres" id="5_hw3q4"]
+[ext_resource type="AudioStream" uid="uid://cli34hdnpb3g4" path="res://sounds/silence.mp3" id="4_hw3q4"]
+[ext_resource type="Material" uid="uid://fq5o1o21f4ut" path="res://shader/boom.tres" id="5_82725"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d8f48"]
 radius = 3.0
@@ -34,8 +34,8 @@ shape = SubResource("CapsuleShape2D_d8f48")
 script = ExtResource("2_hw3q4")
 melody = SubResource("Resource_1242y")
 sound = ExtResource("4_hw3q4")
-shader = ExtResource("5_hw3q4")
-number = 4
+shader = ExtResource("5_82725")
+number = 1
 phrase_text = "я гриб круто 2оой"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=230538001]
