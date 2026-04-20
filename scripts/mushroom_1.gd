@@ -11,8 +11,13 @@ func _ready() -> void:
 	$CollisionShape2D.disabled = true
 	
 func shows(e):
-	if e.number == number:
+	if e.number == number: 
 		$CollisionShape2D.disabled = false
+		
+		var spore_event = SporeEvent.new()
+		spore_event.target_position = global_position
+		
+		Bus.create_event(spore_event)
 	else:
 		$CollisionShape2D.disabled = true
 

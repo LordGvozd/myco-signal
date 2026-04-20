@@ -5,6 +5,9 @@ var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN 
 var state: String = "idle"
 
+@export
+var world_size: Size
+
 var enable_to_move: bool = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -14,6 +17,9 @@ func _ready() -> void:
 	Bus.subscribe(CloseElectrod, make_player_great_again)
 	Bus.subscribe(ShowTutorialEvent, make_player_invalid)  
 	Bus.subscribe(TutorialClosedEvent, make_player_great_again)
+	
+	$Camera2D.world_size = world_size
+	$Camera2D.limit_camera()
 	
 func make_player_invalid(e):
 	enable_to_move = false
