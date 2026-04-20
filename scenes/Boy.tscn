@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mm8esk324vd5"]
 
 [ext_resource type="Texture2D" uid="uid://dnn3tic15tswb" path="res://sprites/boy_idle1-sheet.png" id="1_f22sb"]
+[ext_resource type="Script" uid="uid://b22gpap1h7kp1" path="res://scripts/boy.gd" id="2_ee6vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6vw"]
 atlas = ExtResource("1_f22sb")
@@ -75,16 +76,37 @@ animations = [{
 radius = 4.0
 height = 8.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22sb"]
+size = Vector2(90, 61)
+
 [node name="Boy" type="Node2D" unique_id=901870445]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1015827059]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7y3jj")
 animation = &"new_animation"
-frame_progress = 0.5667146
+autoplay = "new_animation"
+frame = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=119021246]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1988119141]
 position = Vector2(-1, 3)
 shape = SubResource("CapsuleShape2D_f46kg")
+
+[node name="Label" type="Label" parent="." unique_id=2100787162]
+offset_left = -19.0
+offset_top = -35.0
+offset_right = 21.0
+offset_bottom = -12.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1308100819]
+script = ExtResource("2_ee6vw")
+message_text = "sddsd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=997947358]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_f22sb")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

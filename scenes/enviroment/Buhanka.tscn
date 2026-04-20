@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwsjdo57kjoh4"]
 
-[ext_resource type="Texture2D" uid="uid://cv17rc1skb1c7" path="res://sprites/buhanka.png" id="1_iacrr"]
+[ext_resource type="Texture2D" uid="uid://cb0ykkrq5xaci" path="res://sprites/objects/buhanka.png" id="1_iacrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iacrr"]
 size = Vector2(30.75, 78)
