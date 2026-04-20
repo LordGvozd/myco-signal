@@ -1,3 +1,3 @@
 @abstract
 class_name IEvent
-extends RefCounted
+extends Resource

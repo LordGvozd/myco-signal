@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://coh3jq7ttrfed"]
+
+[ext_resource type="Shader" uid="uid://srimo1wuqvok" path="res://shader/hue.gdshader" id="1_osvv4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_osvv4")

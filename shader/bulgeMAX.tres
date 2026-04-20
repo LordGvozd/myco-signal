@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b5lwdsrqlh8m7"]
+
+[ext_resource type="Shader" uid="uid://dytq8155j2vg8" path="res://shader/bulge.gdshader" id="1_3p25x"]
+
+[resource]
+shader = ExtResource("1_3p25x")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.25
+shader_parameter/strength = 0.5

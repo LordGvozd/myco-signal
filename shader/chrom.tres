@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://rc4qpfmh8vlg"]
+
+[ext_resource type="Shader" uid="uid://du7mi4xu54iyd" path="res://shader/chrom.gdshader" id="1_bqscj"]
+
+[resource]
+shader = ExtResource("1_bqscj")
+shader_parameter/strength = 0.01
+shader_parameter/center = Vector2(0.5, 0.5)

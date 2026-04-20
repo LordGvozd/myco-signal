@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dkpkpepj4p1ni" path="res://sprites/mushrooms/mushroom4.png" id="1_m1qfd"]
 [ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_7g2bg"]
+[ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_8pn31"]
+[ext_resource type="AudioStream" uid="uid://cli34hdnpb3g4" path="res://sounds/silence.mp3" id="4_gb55e"]
+[ext_resource type="Material" uid="uid://fq5o1o21f4ut" path="res://shader/boom.tres" id="5_gb55e"]
+
+[sub_resource type="Resource" id="Resource_gai44"]
+script = ExtResource("3_8pn31")
+melody = Array[int]([30, 4, 56, 4, 46])
+metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1qfd"]
 size = Vector2(41.5, 44)
@@ -17,6 +25,9 @@ texture = ExtResource("1_m1qfd")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=437496780]
 script = ExtResource("2_7g2bg")
+melody = SubResource("Resource_gai44")
+sound = ExtResource("4_gb55e")
+shader = ExtResource("5_gb55e")
 phrase_text = "я гриб крутооой"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2119960678]

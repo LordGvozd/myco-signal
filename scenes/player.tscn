@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://50ywv28xjlwa"]
 
 [ext_resource type="Script" uid="uid://8ncw5stcx44" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cxdd4an6nt8oq" path="res://scripts/on_mood_changed.gd" id="2_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://b5a1wt5c5jh5k" path="res://sprites/shadow.png" id="2_smehm"]
 [ext_resource type="Texture2D" uid="uid://cuge4422p23mk" path="res://sprites/player_idle_down1-sheet (2).png" id="3_smehm"]
 [ext_resource type="Script" uid="uid://gh1he0gwvuwk" path="res://scripts/ui/player_phrase.gd" id="4_dqkch"]
@@ -8,8 +9,14 @@
 [ext_resource type="Script" uid="uid://bxdg73dnctp1i" path="res://scripts/ui/hint.gd" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dgm2c3ocsbss3" path="res://sprites/player_walk_hor1-sheet (2).png" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://hucihbd2evyd" path="res://sprites/player_walk_top1-sheet (2).png" id="6_d2wvv"]
+[ext_resource type="Script" uid="uid://dl1ilaxnk0gsm" path="res://scripts/effect_rect.gd" id="7_d2wvv"]
+[ext_resource type="AudioStream" uid="uid://d000f0y7oket5" path="res://sounds/thunder.mp3" id="7_oprun"]
 [ext_resource type="PackedScene" uid="uid://ch7jb2tu42kba" path="res://scenes/electrod.tscn" id="9_ur7pv"]
 [ext_resource type="Script" uid="uid://c7l73jgnsqr" path="res://scripts/camera_2d.gd" id="10_y4r1p"]
+[ext_resource type="VideoStream" uid="uid://nfdmunffsjku" path="res://sounds/boom00000000.ogv" id="11_3v2ag"]
+[ext_resource type="Shader" uid="uid://3b7syhxjj03c" path="res://shader/player.gdshader" id="11_jej6c"]
+[ext_resource type="Script" uid="uid://dthchobqyw2f4" path="res://scripts/matadora_effect.gd" id="13_f1ej7"]
+[ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="16_a8ls1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ur7pv"]
 
@@ -470,9 +477,119 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_oprun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThunderScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.76862746, 0.84313726, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f1ej7"]
+resource_name = "thunder"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThunderScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.36666667, 2),
+"transitions": PackedFloat32Array(1, 1, 0.36602142),
+"update": 0,
+"values": [Color(0.76862746, 0.84313726, 1, 0), Color(0.76862746, 0.84313726, 1, 1), Color(0.76862746, 0.84313726, 1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThunderScreen/ThunderSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_oprun")
+}],
+"times": PackedFloat32Array(0.13333334)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oprun"]
+_data = {
+&"RESET": SubResource("Animation_oprun"),
+&"thunder": SubResource("Animation_f1ej7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1ej7"]
+shader = ExtResource("11_jej6c")
+shader_parameter/chroma_key_color = Color(0, 0, 0, 1)
+shader_parameter/pickup_range = 0.1
+shader_parameter/fade_amount = 0.05
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oprun"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_oprun"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 1.4907085, 0, 0, Vector2(0.5017182, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0.0014747381), -1.2102302, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a8ls1"]
+curve = SubResource("Curve_oprun")
+
+[sub_resource type="Gradient" id="Gradient_qfm1y"]
+offsets = PackedFloat32Array(0.003773585, 1)
+colors = PackedColorArray(1, 1, 1, 0.078431375, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fulsm"]
+gradient = SubResource("Gradient_qfm1y")
+
+[sub_resource type="Curve" id="Curve_4r5pv"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_60mlk"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0.010309279, 15.484549), 0.0, 0.0, 0, 0, Vector2(0.25773194, 30), 0.0, 0.0, 0, 0, Vector2(0.98281777, 30), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_i4ail"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_a38lo"]
+curve_x = SubResource("Curve_4r5pv")
+curve_y = SubResource("Curve_60mlk")
+curve_z = SubResource("Curve_i4ail")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oprun"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(350, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.19999999
+scale_over_velocity_curve = SubResource("CurveXYZTexture_a38lo")
+color_initial_ramp = SubResource("GradientTexture1D_fulsm")
+alpha_curve = SubResource("CurveTexture_a8ls1")
+
 [node name="Player" type="CharacterBody2D" unique_id=1779298022 groups=["player"]]
 texture_filter = 1
 script = ExtResource("1_g2els")
+
+[node name="MoodChanhed" type="Node2D" parent="." unique_id=791464158]
+script = ExtResource("2_qfm1y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=292313141]
 modulate = Color(1, 1, 1, 0.4627451)
@@ -491,6 +608,46 @@ sprite_frames = SubResource("SpriteFrames_ke2ow")
 animation = &"walk_up"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509683948]
+
+[node name="ThunderScreen" type="ColorRect" parent="CanvasLayer" unique_id=1903817149]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.76862746, 0.84313726, 1, 0)
+
+[node name="ThunderAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ThunderScreen" unique_id=225736092]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_oprun")
+
+[node name="ThunderSound" type="AudioStreamPlayer2D" parent="CanvasLayer/ThunderScreen" unique_id=247666911]
+volume_db = 7.616
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=574274126]
+material = SubResource("ShaderMaterial_f1ej7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -240.0
+offset_right = 560.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("11_3v2ag")
+volume_db = -80.0
+loop = true
+script = ExtResource("13_f1ej7")
+
+[node name="EffectRect" type="ColorRect" parent="CanvasLayer" unique_id=1116293081]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("7_d2wvv")
 
 [node name="PlayerUI" type="Control" parent="CanvasLayer" unique_id=1735401902]
 layout_mode = 3
@@ -525,6 +682,24 @@ offset_right = -1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="OnDonePlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=2045804513]
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1315098563]
 zoom = Vector2(3, 3)
 script = ExtResource("10_y4r1p")
+
+[node name="EnviromentPlayer" type="AudioStreamPlayer2D" parent="." unique_id=472609201]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1081013318]
+material = SubResource("CanvasItemMaterial_oprun")
+emitting = false
+amount = 1000
+lifetime = 0.5
+preprocess = 0.5
+visibility_rect = Rect2(-350, -200, 700, 400)
+process_material = SubResource("ParticleProcessMaterial_oprun")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1425135820]
+
+[node name="Fog" parent="." unique_id=964251376 instance=ExtResource("16_a8ls1")]
+visible = false

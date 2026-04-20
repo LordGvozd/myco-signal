@@ -6,8 +6,8 @@ class_name InteractableArea extends Area2D
 var _is_player_in: bool = false
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	body_entered.connect(on_body_entered)
+	body_exited.connect(on_body_exited)
 
 func _process(delta: float) -> void:
 	if _is_player_in and Input.is_action_just_pressed("interact"):
@@ -16,14 +16,14 @@ func _process(delta: float) -> void:
 		Bus.create_event(event)
 		get_viewport().set_input_as_handled()
 
-func _on_body_entered(body: Node2D) -> void:
+func on_body_entered(body: Node2D) -> void:
 	if _is_player(body):
 		_is_player_in = true
 		var hint_event = HintEvent.new()
 		hint_event.hint = hint_message
 		Bus.create_event(hint_event)
 
-func _on_body_exited(body: Node2D) -> void:
+func on_body_exited(body: Node2D) -> void:
 	if _is_player(body):
 		_is_player_in = false
 		var hide_hint = HintEvent.new()

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cpj1ldbsamuli"]
+
+[ext_resource type="Shader" uid="uid://c5pi0f7xlg71x" path="res://shader/fog.gdshader" id="1_ntoob"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ntoob"]
+noise_type = 3
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e072f"]
+width = 800
+height = 600
+noise = SubResource("FastNoiseLite_ntoob")
+seamless = true
+seamless_blend_skirt = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e072f"]
+shader = ExtResource("1_ntoob")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_e072f")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.02, 0.01)
+
+[node name="Fog" type="Parallax2D" unique_id=964251376]
+repeat_size = Vector2(800, 600)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=672036256]
+visible = false
+motion_mirroring = Vector2(800, 600)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer" unique_id=1620433782]
+visible = false
+material = SubResource("ShaderMaterial_e072f")
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 805.0
+offset_bottom = 605.0
+color = Color(1, 1, 1, 0.16078432)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1649487195]
+material = SubResource("ShaderMaterial_e072f")
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 805.0
+offset_bottom = 605.0

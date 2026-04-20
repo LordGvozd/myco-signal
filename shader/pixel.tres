@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bt8drbw6m3a"]
+
+[ext_resource type="Shader" uid="uid://inackhv4yf5s" path="res://shader/pixel.gdshader" id="1_wu5pj"]
+
+[resource]
+shader = ExtResource("1_wu5pj")
+shader_parameter/pixel_size = 8

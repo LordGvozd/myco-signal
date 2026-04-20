@@ -19,12 +19,33 @@ var buttons_colors: Array[Color]
 var correct_sequence: Array[int] = []
 var input_sequence: Array[int]
 var correct_notes: Array[AudioSampler.Note]
+var event_on_done: IEvent
+var sound_on_done: AudioStreamMP3
+var shader_on_done: ShaderMaterial
 	
 func _ready() -> void:
 	show_all()
 	
+	Bus.subscribe(OpenElectrod, open)
+	
 	for index in len(buttons):
 		buttons[index].button_down.connect(_on_btn_down.bind(index))
+		
+	self.visible = false
+
+func open(event: OpenElectrod) -> void:
+	correct_sequence = []
+	input_sequence = []
+	correct_notes = []
+	melody = event.melody
+	is_playing = false
+	event_on_done = event.on_done_event
+	sound_on_done = event.sound
+	shader_on_done = event.shader
+	spectrogramma.clear_points()
+	show_all()
+	
+	visible = true
 
 func _on_btn_down(index: int) -> void:
 	print(input_sequence)
@@ -41,13 +62,8 @@ func _on_btn_down(index: int) -> void:
 			await get_tree().create_timer(.5).timeout
 			show_all()
 			
-			
-			
-		
-		
 		if correct_sequence == input_sequence:
-			print("WINWIN")
-			for i in range(10):
+			for i in range(5):
 					for btn in buttons:
 						if i % 2 == 0:
 							btn.modulate = btn.base_color
@@ -57,9 +73,16 @@ func _on_btn_down(index: int) -> void:
 					
 			input_sequence = []
 			hide_all()
-		
-			
 
+			var event_closed = CloseElectrod.new()
+			event_closed.shader = shader_on_done
+			event_closed.sound = sound_on_done
+			
+			Bus.create_event(event_closed)
+			Bus.create_event(event_on_done)
+			print(event_on_done.number)
+			visible = false
+			
 func play_melody() -> void:
 	is_playing = true
 	var x = 0
