@@ -6,21 +6,74 @@
 [ext_resource type="Texture2D" uid="uid://cdyiqxdryql34" path="res://sprites/electro.png" id="3_1qbu3"]
 [ext_resource type="AudioStream" uid="uid://dllcejf7em3u4" path="res://sounds/Modern Biology - Mushroom Music (mp3cut.net) (6).mp3" id="4_85x3y"]
 [ext_resource type="Script" uid="uid://d1o1t64wwqjtk" path="res://scripts/ui/electrod/spectrogramma.gd" id="5_85x3y"]
-[ext_resource type="Texture2D" uid="uid://yiik17qkj2jr" path="res://sprites/button.png" id="6_tf5kn"]
+[ext_resource type="Texture2D" uid="uid://bc8ndm7ixtwqp" path="res://sprites/button_play1.png" id="7_2l7ms"]
+[ext_resource type="Texture2D" uid="uid://b3oxrwd8h00yq" path="res://sprites/button_mus_press1.png" id="7_c1nfe"]
+[ext_resource type="Texture2D" uid="uid://du038h0eb1myo" path="res://sprites/button_mus.png" id="7_rog4y"]
 [ext_resource type="Script" uid="uid://bbvlmvj8t07ni" path="res://scripts/sound_button.gd" id="7_ut64i"]
+[ext_resource type="Texture2D" uid="uid://6c2c6000kqos" path="res://sprites/button_play.png" id="7_ysvat"]
+[ext_resource type="Texture2D" uid="uid://3qe80wekp1wp" path="res://sprites/button_play2.png" id="9_f3of2"]
+[ext_resource type="Texture2D" uid="uid://6v4q8cxsji8j" path="res://sprites/button_mus_press2.png" id="9_rog4y"]
+[ext_resource type="Texture2D" uid="uid://dss17b6s2gkjp" path="res://sprites/button_mus_press3.png" id="10_4ha1b"]
+[ext_resource type="Texture2D" uid="uid://b64yt0jhauf34" path="res://sprites/button_play3.png" id="10_oyynq"]
+[ext_resource type="Texture2D" uid="uid://daujp5e4cfwfw" path="res://sprites/button_play4.png" id="11_ijmeq"]
+[ext_resource type="Texture2D" uid="uid://cp5y55qu573dj" path="res://sprites/button_mus_press4.png" id="11_p864v"]
+[ext_resource type="Texture2D" uid="uid://hn2l33ammq8a" path="res://sprites/button_mus_press5.png" id="12_nk2cb"]
+[ext_resource type="Texture2D" uid="uid://dfdlkskcyeayc" path="res://sprites/button_play5.png" id="12_rh41s"]
+[ext_resource type="Texture2D" uid="uid://ctagso2aftumi" path="res://sprites/button_mus_hover1.png" id="13_q0qcx"]
+[ext_resource type="Texture2D" uid="uid://cqt65r5lsyw4n" path="res://sprites/button_mus_hover2.png" id="14_2l7ms"]
+[ext_resource type="Texture2D" uid="uid://xnuvkrxf6ln0" path="res://sprites/button_mus_hover3.png" id="15_52bs8"]
+[ext_resource type="Texture2D" uid="uid://b28nqkin103xx" path="res://sprites/button_mus_hover4.png" id="16_1b4e7"]
+[ext_resource type="Texture2D" uid="uid://bti0u2s6k2ff5" path="res://sprites/button_mus_hover5.png" id="17_6ayij"]
 
 [sub_resource type="Resource" id="Resource_ut64i"]
 script = ExtResource("2_vkvcl")
 melody = Array[int]([24, 4, 26, 4, 30, 8, 40])
 metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
 
-[sub_resource type="Environment" id="Environment_tf5kn"]
-background_mode = 3
-glow_enabled = true
-glow_strength = 1.19
-glow_blend_mode = 0
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2l7ms"]
+frames = 5
+one_shot = true
+frame_0/texture = ExtResource("7_2l7ms")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("9_f3of2")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("10_oyynq")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("11_ijmeq")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("12_rh41s")
+frame_4/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1qbu3"]
+frames = 5
+one_shot = true
+frame_0/texture = ExtResource("7_c1nfe")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("9_rog4y")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("10_4ha1b")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("11_p864v")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("12_nk2cb")
+frame_4/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_4ha1b"]
+frames = 5
+one_shot = true
+frame_0/texture = ExtResource("13_q0qcx")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("14_2l7ms")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("15_52bs8")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("16_1b4e7")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("17_6ayij")
+frame_4/duration = 0.1
 
 [node name="Electrod" type="Control" unique_id=1868941164 node_paths=PackedStringArray("buttons")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wxul6")
-buttons = [NodePath("TextureButton"), NodePath("TextureButton2"), NodePath("TextureButton3")]
+buttons = [NodePath("ButtonMus1"), NodePath("ButtonMus2"), NodePath("ButtonMus3"), NodePath("ButtonMus4")]
 melody = SubResource("Resource_ut64i")
 buttons_colors = Array[Color]([Color(1.0832684, 1.8247963, 0.88393724, 1)])
 
@@ -82,44 +135,72 @@ script = ExtResource("5_85x3y")
 line_color = Color(0, 1, 0, 1)
 line_width = 1.5
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=462287516]
-environment = SubResource("Environment_tf5kn")
-
-[node name="Button" type="Button" parent="." unique_id=1145140313]
+[node name="Play" type="TextureButton" parent="." unique_id=1130602217]
+texture_filter = 1
 layout_mode = 0
-offset_left = 419.0
-offset_top = 485.0
-offset_right = 459.0
-offset_bottom = 524.0
+offset_left = 418.99997
+offset_top = 489.00003
+offset_right = 444.99997
+offset_bottom = 502.00003
+scale = Vector2(3.8276293, 3.7744036)
+texture_normal = ExtResource("7_ysvat")
+texture_pressed = SubResource("AnimatedTexture_2l7ms")
+texture_hover = SubResource("AnimatedTexture_2l7ms")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1903511839]
-modulate = Color(0.471, 1.017, 1.825, 1)
+[node name="ButtonMus1" type="TextureButton" parent="." unique_id=1903511839]
+modulate = Color(0, 0, 1, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = 445.0
-offset_top = 241.0
-offset_right = 509.0
-offset_bottom = 305.0
-texture_normal = ExtResource("6_tf5kn")
+offset_left = 445.00003
+offset_top = 250.00002
+offset_right = 457.00003
+offset_bottom = 263.0
+scale = Vector2(3.8317993, 3.8317993)
+texture_normal = ExtResource("7_rog4y")
+texture_pressed = SubResource("AnimatedTexture_1qbu3")
+texture_hover = SubResource("AnimatedTexture_4ha1b")
 script = ExtResource("7_ut64i")
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=1139918701]
-modulate = Color(1.8247963, 0, 0, 1)
+[node name="ButtonMus2" type="TextureButton" parent="." unique_id=758144223]
+modulate = Color(0.7294118, 0.33333334, 0.827451, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = 540.0
-offset_top = 243.0
-offset_right = 604.0
-offset_bottom = 307.0
-texture_normal = ExtResource("6_tf5kn")
+offset_left = 514.00006
+offset_top = 250.00002
+offset_right = 526.00006
+offset_bottom = 263.0
+scale = Vector2(3.8317993, 3.8317993)
+texture_normal = ExtResource("7_rog4y")
+texture_pressed = SubResource("AnimatedTexture_1qbu3")
+texture_hover = SubResource("AnimatedTexture_4ha1b")
 script = ExtResource("7_ut64i")
 
-[node name="TextureButton3" type="TextureButton" parent="." unique_id=208327809]
-modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+[node name="ButtonMus3" type="TextureButton" parent="." unique_id=148769920]
+modulate = Color(1, 1, 0, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = 644.0
-offset_top = 244.0
-offset_right = 708.0
-offset_bottom = 308.0
-texture_normal = ExtResource("6_tf5kn")
+offset_left = 587.00006
+offset_top = 250.00002
+offset_right = 599.00006
+offset_bottom = 263.0
+scale = Vector2(3.8317993, 3.8317993)
+texture_normal = ExtResource("7_rog4y")
+texture_pressed = SubResource("AnimatedTexture_1qbu3")
+texture_hover = SubResource("AnimatedTexture_4ha1b")
 script = ExtResource("7_ut64i")
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[node name="ButtonMus4" type="TextureButton" parent="." unique_id=1224415082]
+modulate = Color(0.5019608, 0, 0.5019608, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 660.00006
+offset_top = 250.00002
+offset_right = 672.00006
+offset_bottom = 263.0
+scale = Vector2(3.8317993, 3.8317993)
+texture_normal = ExtResource("7_rog4y")
+texture_pressed = SubResource("AnimatedTexture_1qbu3")
+texture_hover = SubResource("AnimatedTexture_4ha1b")
+script = ExtResource("7_ut64i")
+
+[connection signal="button_down" from="Play" to="." method="_on_button_button_down"]

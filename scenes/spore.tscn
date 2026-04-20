@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bjx3nlfuvw4rj"]
+
+[ext_resource type="Script" uid="uid://c3yh12ho0y55q" path="res://scripts/spore.gd" id="1_1awx3"]
+
+[sub_resource type="Curve" id="Curve_j5jx5"]
+_data = [Vector2(0, 0.97752815), 0.0, 0.0, 0, 0, Vector2(0.5851064, 0.59550565), -0.8801497, -0.8801497, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lpvoh"]
+curve = SubResource("Curve_j5jx5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_74lek"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(2.02, 1.94, 1)
+emission_shape = 3
+emission_box_extents = Vector3(4.205, 4.755, 1)
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_lpvoh")
+
+[node name="Spore" type="GPUParticles2D" unique_id=191461626]
+z_index = -3
+emitting = false
+amount = 10000
+lifetime = 10.0
+visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+process_material = SubResource("ParticleProcessMaterial_74lek")
+script = ExtResource("1_1awx3")
+speed = 30

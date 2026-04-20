@@ -642,6 +642,7 @@ offset_bottom = 299.0
 text = "тут туториал"
 
 [node name="ThunderScreen" type="ColorRect" parent="CanvasLayer" unique_id=1903817149]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -657,6 +658,7 @@ libraries/ = SubResource("AnimationLibrary_oprun")
 volume_db = 7.616
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=574274126]
+visible = false
 material = SubResource("ShaderMaterial_f1ej7")
 anchors_preset = 15
 anchor_right = 1.0
@@ -673,6 +675,7 @@ loop = true
 script = ExtResource("13_f1ej7")
 
 [node name="EffectRect" type="ColorRect" parent="CanvasLayer" unique_id=1116293081]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -682,6 +685,7 @@ color = Color(1, 1, 1, 0)
 script = ExtResource("7_d2wvv")
 
 [node name="PlayerUI" type="Control" parent="CanvasLayer" unique_id=1735401902]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -708,7 +712,6 @@ offset_bottom = 572.0
 script = ExtResource("5_qlg0r")
 
 [node name="Electrod" parent="CanvasLayer" unique_id=1868941164 instance=ExtResource("9_ur7pv")]
-visible = false
 offset_left = -1.0
 offset_right = -1.0
 size_flags_horizontal = 3

@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://d4cwt8ehlg2np" path="res://sprites/mushrooms/mushroom1.png" id="1_flqqx"]
 [ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_8neoy"]
 [ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_ngglm"]
-[ext_resource type="AudioStream" uid="uid://cli34hdnpb3g4" path="res://sounds/silence.mp3" id="4_r35da"]
+[ext_resource type="AudioStream" uid="uid://yquxqv2qe5kc" path="res://sounds/matadora dubbing x omagad.mp3" id="4_ngglm"]
+[ext_resource type="Material" uid="uid://b5lwdsrqlh8m7" path="res://shader/bulgeMAX.tres" id="5_r35da"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rn76n"]
 radius = 3.0
@@ -11,13 +12,13 @@ height = 12.0
 
 [sub_resource type="Resource" id="Resource_7k3fu"]
 script = ExtResource("3_ngglm")
-melody = Array[int]([23, 4, 34, 3, 57, 2, 53, 1, 73])
+melody = Array[int]([50, 1, 50, 1, 47, 1, 47, 3, 52, 2, 52, 3, 50])
 metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ju2bi"]
 size = Vector2(41.5, 44)
 
-[node name="Mushroom6" type="Node2D" unique_id=1612334020]
+[node name="Mushroom4" type="Node2D" unique_id=1612334020]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=527777183]
 texture_filter = 1
@@ -29,12 +30,13 @@ texture = ExtResource("1_flqqx")
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_rn76n")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=353439284]
+[node name="Area2D" type="Area2D" parent="." unique_id=822187302]
 script = ExtResource("2_8neoy")
 melody = SubResource("Resource_7k3fu")
-sound = ExtResource("4_r35da")
+sound = ExtResource("4_ngglm")
+shader = ExtResource("5_r35da")
 number = 4
 phrase_text = "я гриб круто 2оой"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1091073769]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1249469015]
 shape = SubResource("RectangleShape2D_ju2bi")

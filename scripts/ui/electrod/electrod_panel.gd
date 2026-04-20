@@ -31,7 +31,7 @@ func _ready() -> void:
 	for index in len(buttons):
 		buttons[index].button_down.connect(_on_btn_down.bind(index))
 		
-	self.visible = false
+	# self.visible = false
 
 func open(event: OpenElectrod) -> void:
 	correct_sequence = []
@@ -123,14 +123,14 @@ func play_melody() -> void:
 	show_all()
 
 func hide_all() -> void:
-	$Button.disabled = true
+	$Play.disabled = true
 	
 	for btn in buttons:
 		btn.modulate = Color.GRAY
 	
 	
 func show_all() -> void:
-	$Button.disabled = false
+	$Play.disabled = false
 		
 	for btn in buttons:
 		btn.modulate = btn.base_color

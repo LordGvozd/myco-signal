@@ -4,30 +4,7 @@
 [ext_resource type="Script" uid="uid://b43eavkqatsqq" path="res://scripts/events_core/visible_on.gd" id="2_bl13t"]
 [ext_resource type="PackedScene" uid="uid://bsqjb53wskafo" path="res://scenes/mushrooms/mushroom_1.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://bofx8xopv3m80" path="res://scenes/mushrooms/mushroom_2.tscn" id="4_j5jx5"]
-[ext_resource type="Script" uid="uid://c3yh12ho0y55q" path="res://scripts/spore.gd" id="5_j5jx5"]
-
-[sub_resource type="Curve" id="Curve_j5jx5"]
-_data = [Vector2(0, 0.97752815), 0.0, 0.0, 0, 0, Vector2(0.5851064, 0.59550565), -0.8801497, -0.8801497, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_lpvoh"]
-curve = SubResource("Curve_j5jx5")
-
-[sub_resource type="Curve" id="Curve_lpvoh"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.1123595, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_at5dv"]
-curve = SubResource("Curve_lpvoh")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_74lek"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(2.02, 1.94, 1)
-emission_shape = 3
-emission_box_extents = Vector3(4.205, 4.755, 1)
-gravity = Vector3(0, 0, 0)
-alpha_curve = SubResource("CurveTexture_lpvoh")
-emission_curve = SubResource("CurveTexture_at5dv")
+[ext_resource type="PackedScene" uid="uid://bjx3nlfuvw4rj" path="res://scenes/spore.tscn" id="5_j5jx5"]
 
 [node name="Test" type="Node2D" unique_id=1054070892]
 script = ExtResource("1_errlg")
@@ -41,10 +18,4 @@ position = Vector2(82, 287)
 [node name="Mushroom2" parent="." unique_id=295252291 instance=ExtResource("4_j5jx5")]
 position = Vector2(695, 98)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1332881126]
-position = Vector2(82, 287)
-emitting = false
-amount = 10000
-lifetime = 10.0
-process_material = SubResource("ParticleProcessMaterial_74lek")
-script = ExtResource("5_j5jx5")
+[node name="Spore" parent="." unique_id=191461626 instance=ExtResource("5_j5jx5")]

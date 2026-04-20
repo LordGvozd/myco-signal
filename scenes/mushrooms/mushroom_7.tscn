@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84rtj"]
 size = Vector2(41.5, 44)
 
-[node name="Mushroom7" type="Node2D" unique_id=1612334020]
+[node name="Mushroom1" type="Node2D" unique_id=1612334020]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=337489756]
 texture_filter = 1
