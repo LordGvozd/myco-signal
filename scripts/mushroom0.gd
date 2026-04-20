@@ -19,7 +19,7 @@ func _process(delta):
 		Bus.create_event(ShowTutorialEvent.new())
 
 func _on_tutorial_closed(event: TutorialClosedEvent):
-	queue_free()
+	get_parent().queue_free()
 	var done_event = MushroomDone.new()
 	done_event.number = number + 1
 	Bus.create_event(done_event)

@@ -35,7 +35,7 @@ script = ExtResource("2_8vg4t")
 melody = SubResource("Resource_b0pas")
 sound = ExtResource("4_8vg4t")
 shader = ExtResource("5_t3uwt")
-number = 4
+number = 5
 phrase_text = "я гриб круто 2оой"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1416028544]

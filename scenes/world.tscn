@@ -1,11 +1,10 @@
 [gd_scene format=4 uid="uid://rmborfq6y5dt"]
 
-[ext_resource type="Texture2D" uid="uid://d0me42v34erue" path="res://sprites/tile.png" id="1_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://d0me42v34erue" path="res://sprites/nature/tile.png" id="1_4wyf3"]
 [ext_resource type="Script" uid="uid://cxdd4an6nt8oq" path="res://scripts/on_mood_changed.gd" id="1_7iits"]
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://bplusw66xkljx" path="res://scripts/world.gd" id="1_oo54l"]
 [ext_resource type="PackedScene" uid="uid://bybx8e2ujst65" path="res://scenes/tutorial_panel.tscn" id="2_kpybi"]
-[ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/InteractableArea.gd" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="2_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://mm8esk324vd5" path="res://scenes/Boy.tscn" id="4_xo05s"]
 [ext_resource type="PackedScene" uid="uid://bix3khrepo458" path="res://scenes/enviroment/tree_1.tscn" id="5_71j4m"]
@@ -14,15 +13,24 @@
 [ext_resource type="PackedScene" uid="uid://e1r5sw7sg3ai" path="res://scenes/enviroment/Berezka_mnogo_2.tscn" id="6_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://bsqjb53wskafo" path="res://scenes/mushrooms/mushroom_1.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://c2k6ihlaxx564" path="res://scenes/mushrooms/mushroom_7.tscn" id="7_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://d32nwko460usm" path="res://scenes/enviroment/house_2.tscn" id="7_kpybi"]
 [ext_resource type="PackedScene" uid="uid://b0eh8gp4ruyxv" path="res://scenes/enviroment/tree_3.tscn" id="7_q5onr"]
-[ext_resource type="PackedScene" uid="uid://6ptjt0mx4oxq" path="res://scenes/enviroment/Berezka_mnogo_1.tscn" id="7_xo05s"]
+[ext_resource type="PackedScene" uid="uid://6ptjt0mx4oxq" path="res://scenes/enviroment/house_1.tscn" id="7_xo05s"]
 [ext_resource type="PackedScene" uid="uid://bd20q5jbov8f1" path="res://scenes/enviroment/rock_3.tscn" id="8_jhx03"]
-[ext_resource type="PackedScene" uid="uid://crtksu7u4xkj" path="res://scenes/mushrooms/mushroom_8.tscn" id="8_lakw3"]
 [ext_resource type="PackedScene" uid="uid://ctb27g40mo0wx" path="res://scenes/enviroment/bush.tscn" id="9_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://jra458feypme" path="res://scenes/enviroment/rock_2.tscn" id="10_xo05s"]
 [ext_resource type="PackedScene" uid="uid://dwsjdo57kjoh4" path="res://scenes/enviroment/Buhanka.tscn" id="11_dss4m"]
+[ext_resource type="PackedScene" uid="uid://bofx8xopv3m80" path="res://scenes/mushrooms/mushroom_2.tscn" id="13_0nbtd"]
+[ext_resource type="PackedScene" uid="uid://hw4hpryq0bs" path="res://scenes/mushrooms/mushroom_3.tscn" id="16_37qwj"]
 [ext_resource type="PackedScene" uid="uid://dvtuqv1ph5fsq" path="res://scenes/mushrooms/mushroom_6.tscn" id="16_pm21f"]
+[ext_resource type="PackedScene" uid="uid://dgcrj8li1uks1" path="res://scenes/mushrooms/mushroom_4.tscn" id="17_navra"]
 [ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="18_2lf6f"]
+[ext_resource type="PackedScene" uid="uid://ds7u04y2ngv20" path="res://scenes/mushrooms/mushroom_5.tscn" id="18_luhhm"]
+[ext_resource type="PackedScene" uid="uid://84tfhn437ilu" path="res://scenes/grandpa.tscn" id="21_ctatt"]
+[ext_resource type="PackedScene" uid="uid://dc2xs77guqff1" path="res://scenes/grandma.tscn" id="21_xgqkh"]
+[ext_resource type="PackedScene" uid="uid://bfj21jayb2oub" path="res://scenes/enviroment/Face_mushroom_2.tscn" id="24_luhhm"]
+[ext_resource type="PackedScene" uid="uid://bi0c14ic3gw14" path="res://scenes/enviroment/Fake_mushroom_1.tscn" id="25_fh13f"]
+[ext_resource type="PackedScene" uid="uid://due8u6roxu3dd" path="res://scenes/mushrooms/Last_Spore_go_to.tscn" id="26_fh13f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8fc1"]
 texture = ExtResource("1_4wyf3")
@@ -90,13 +98,13 @@ visible = false
 [node name="OnDark" type="Node2D" parent="." unique_id=137377075]
 script = ExtResource("1_7iits")
 
-[node name="TopLeft" type="Marker2D" parent="WorldSize" unique_id=1967630804]
+[node name="WorldSize#TopLeft" type="Marker2D" parent="." unique_id=1967630804]
 position = Vector2(-385, -1146)
 
-[node name="BottomRight" type="Marker2D" parent="WorldSize" unique_id=1104260037]
+[node name="WorldSize#BottomRight" type="Marker2D" parent="." unique_id=1104260037]
 position = Vector2(1001, 605)
 
-[node name="DARK_MODE" type="Node2D" parent="." unique_id=137377075]
+[node name="DARK_MODE" type="Node2D" parent="." unique_id=779143329]
 visible = false
 y_sort_enabled = true
 script = ExtResource("1_7iits")
@@ -107,6 +115,9 @@ color = Color(0.5251013, 0.5251013, 0.5251013, 1)
 [node name="Fog" parent="DARK_MODE" unique_id=964251376 instance=ExtResource("2_w7kh3")]
 
 [node name="BASE" type="Node2D" parent="." unique_id=589231974]
+y_sort_enabled = true
+
+[node name="=== NPC ===" type="Node2D" parent="BASE" unique_id=1541030936]
 y_sort_enabled = true
 
 [node name="=== TREES ===" type="Node2D" parent="BASE" unique_id=1040608392]
@@ -128,11 +139,6 @@ texture_filter = 1
 position = Vector2(-155, -2)
 metadata/_edit_group_ = true
 
-[node name="Tree1" parent="BASE/=== TREES ===" unique_id=1282656336 instance=ExtResource("5_71j4m")]
-texture_filter = 1
-position = Vector2(-168, 169)
-metadata/_edit_group_ = true
-
 [node name="Tree20" parent="BASE/=== TREES ===" unique_id=1300707896 instance=ExtResource("5_71j4m")]
 texture_filter = 1
 position = Vector2(-160, 299)
@@ -148,15 +154,21 @@ texture_filter = 1
 position = Vector2(-211, 238)
 metadata/_edit_group_ = true
 
+[node name="House_1" parent="BASE/=== TREES ===" unique_id=1216615253 instance=ExtResource("7_xo05s")]
+position = Vector2(85, -88)
+
 [node name="Tree22" parent="BASE/=== TREES ===" unique_id=1464869876 instance=ExtResource("5_71j4m")]
 texture_filter = 1
 position = Vector2(-77, 246)
 metadata/_edit_group_ = true
 
+[node name="house_2" parent="BASE/=== TREES ===" unique_id=1594624907 instance=ExtResource("7_kpybi")]
+position = Vector2(683, 80)
+
 [node name="Tree9" parent="BASE/=== TREES ===" unique_id=1928856928 instance=ExtResource("5_q5onr")]
 position = Vector2(1, -119)
 
-[node name="BerezkaMnogo6" parent="BASE/=== TREES ===" unique_id=1216615253 instance=ExtResource("6_o8fc1")]
+[node name="BerezkaMnogo6" parent="BASE/=== TREES ===" unique_id=1046656542 instance=ExtResource("6_o8fc1")]
 texture_filter = 1
 position = Vector2(109, 335)
 
@@ -253,9 +265,6 @@ position = Vector2(-14, 382)
 texture_filter = 1
 position = Vector2(-134, 404)
 
-[node name="BerezkaMnogo2" parent="BASE/=== TREES ===" unique_id=1712094728 instance=ExtResource("7_xo05s")]
-position = Vector2(-255, 252)
-
 [node name="BerezkaMnogo7" parent="BASE/=== TREES ===" unique_id=657616239 instance=ExtResource("6_o8fc1")]
 texture_filter = 1
 position = Vector2(201, 376)
@@ -266,47 +275,34 @@ position = Vector2(21, -113)
 [node name="Tree8" parent="BASE/=== TREES ===" unique_id=651649812 instance=ExtResource("7_q5onr")]
 position = Vector2(-231, 120)
 
+[node name="Tree1" parent="BASE/=== TREES ===" unique_id=1282656336 instance=ExtResource("5_71j4m")]
+texture_filter = 1
+position = Vector2(-168, 169)
+metadata/_edit_group_ = true
+
 [node name="=== MUSHROOMS ===" type="Node2D" parent="BASE" unique_id=56997874]
 y_sort_enabled = true
 
-[node name="Mushroom10" parent="BASE/=== MUSHROOMS ===" unique_id=1612334020 instance=ExtResource("7_7t5mc")]
-position = Vector2(329, 375)
+[node name="Mushroom1" parent="BASE/=== MUSHROOMS ===" unique_id=1658081793 instance=ExtResource("7_7t5mc")]
+position = Vector2(-107, 211)
 
-[node name="Mushroom12" parent="BASE/=== MUSHROOMS ===" unique_id=2004605454 instance=ExtResource("7_7t5mc")]
-position = Vector2(436, 418)
+[node name="Mushroom2" parent="BASE/=== MUSHROOMS ===" unique_id=1612334020 instance=ExtResource("13_0nbtd")]
+position = Vector2(208, 291)
 
-[node name="Mushroom13" parent="BASE/=== MUSHROOMS ===" unique_id=1100751472 instance=ExtResource("7_7t5mc")]
-position = Vector2(361, 400)
+[node name="Mushroom3" parent="BASE/=== MUSHROOMS ===" unique_id=1801498178 instance=ExtResource("6_qfnet")]
+position = Vector2(588, 110)
 
-[node name="Mushroom14" parent="BASE/=== MUSHROOMS ===" unique_id=347020408 instance=ExtResource("7_7t5mc")]
-position = Vector2(385, 368)
-
-[node name="Mushroom16" parent="BASE/=== MUSHROOMS ===" unique_id=1683549637 instance=ExtResource("8_lakw3")]
-position = Vector2(354, 383)
-
-[node name="Mushroom15" parent="BASE/=== MUSHROOMS ===" unique_id=1836577736 instance=ExtResource("8_lakw3")]
-position = Vector2(326, 414)
-
-[node name="Mushroom9" parent="BASE/=== MUSHROOMS ===" unique_id=2062769683 instance=ExtResource("7_7t5mc")]
-position = Vector2(348, 355)
-
-[node name="Mushroom7" parent="BASE/=== MUSHROOMS ===" unique_id=104422292 instance=ExtResource("7_7t5mc")]
-position = Vector2(335, 347)
-
-[node name="Mushroom11" parent="BASE/=== MUSHROOMS ===" unique_id=213584820 instance=ExtResource("8_lakw3")]
-position = Vector2(378, 352)
-
-[node name="Mushroom8" parent="BASE/=== MUSHROOMS ===" unique_id=702035360 instance=ExtResource("8_lakw3")]
-position = Vector2(320, 362)
-
-[node name="Mushroom1" parent="BASE/=== MUSHROOMS ===" unique_id=1818789359 instance=ExtResource("6_qfnet")]
-position = Vector2(-40, 24)
-
-[node name="Mushroom6" parent="BASE/=== MUSHROOMS ===" unique_id=886682240 instance=ExtResource("16_pm21f")]
+[node name="Mushroom4" parent="BASE/=== MUSHROOMS ===" unique_id=886682240 instance=ExtResource("16_pm21f")]
 position = Vector2(136, -22)
 
-[node name="Mushroom17" parent="BASE/=== MUSHROOMS ===" unique_id=1658081793 instance=ExtResource("7_7t5mc")]
-position = Vector2(-107, 211)
+[node name="Mushroom5" parent="BASE/=== MUSHROOMS ===" unique_id=1480037615 instance=ExtResource("16_37qwj")]
+position = Vector2(-270, -219)
+
+[node name="Mushroom6" parent="BASE/=== MUSHROOMS ===" unique_id=1112185678 instance=ExtResource("17_navra")]
+position = Vector2(423, 220)
+
+[node name="Mushroom7" parent="BASE/=== MUSHROOMS ===" unique_id=2069105752 instance=ExtResource("18_luhhm")]
+position = Vector2(543, -321)
 
 [node name="===ENVIROMENTS===" type="Node2D" parent="BASE" unique_id=704158909]
 y_sort_enabled = true
@@ -317,20 +313,14 @@ position = Vector2(167, -33)
 [node name="Bush" parent="BASE/===ENVIROMENTS===" unique_id=256682960 instance=ExtResource("9_o8fc1")]
 position = Vector2(-172, 208)
 
+[node name="Bush2" parent="BASE/===ENVIROMENTS===" unique_id=999613395 instance=ExtResource("9_o8fc1")]
+position = Vector2(53, -41)
+
 [node name="Rock_3" parent="BASE/===ENVIROMENTS===" unique_id=1261813070 instance=ExtResource("10_xo05s")]
 position = Vector2(-102, 235)
 
 [node name="Rock_4" parent="BASE/===ENVIROMENTS===" unique_id=939508163 instance=ExtResource("11_dss4m")]
 position = Vector2(-104, 114)
-
-[node name="=== NPC ===" type="Node2D" parent="BASE" unique_id=1541030936]
-y_sort_enabled = true
-
-[node name="Mushroom18" parent="." unique_id=114502701 instance=ExtResource("8_lakw3")]
-position = Vector2(203, 292)
-
-[node name="Mushroom17" parent="." unique_id=1658081793 instance=ExtResource("7_7t5mc")]
-position = Vector2(-107, 211)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BASE" unique_id=830321054]
 z_index = -4
@@ -341,11 +331,68 @@ tile_set = SubResource("TileSet_xo05s")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
+[node name="FaceMushroom3" parent="." unique_id=885311355 instance=ExtResource("24_luhhm")]
+position = Vector2(363, 360)
+
+[node name="FaceMushroom3" parent="FaceMushroom3" unique_id=1744536635 instance=ExtResource("24_luhhm")]
+position = Vector2(-26, 13)
+
+[node name="FakeMushroom2" parent="FaceMushroom3" unique_id=448559620 instance=ExtResource("25_fh13f")]
+position = Vector2(-40, 23)
+
+[node name="FaceMushroom2" parent="FaceMushroom3" unique_id=2087328673 instance=ExtResource("24_luhhm")]
+position = Vector2(-16, 0)
+
+[node name="FakeMushroom1" parent="FaceMushroom3" unique_id=1447209501 instance=ExtResource("25_fh13f")]
+position = Vector2(-37, -3)
+
+[node name="FakeMushroom2" parent="." unique_id=1892322303 instance=ExtResource("25_fh13f")]
+position = Vector2(349, 370)
+
+[node name="FaceMushroom3" parent="FakeMushroom2" unique_id=1273972410 instance=ExtResource("24_luhhm")]
+position = Vector2(91, -2)
+
+[node name="FaceMushroom3" parent="FakeMushroom2/FaceMushroom3" unique_id=1074275562 instance=ExtResource("24_luhhm")]
+position = Vector2(-22, -24)
+
+[node name="FakeMushroom2" parent="FakeMushroom2/FaceMushroom3" unique_id=2108954716 instance=ExtResource("25_fh13f")]
+position = Vector2(-57, 29)
+
+[node name="FaceMushroom2" parent="FakeMushroom2/FaceMushroom3" unique_id=1437825527 instance=ExtResource("24_luhhm")]
+position = Vector2(-20, 47)
+
+[node name="FakeMushroom1" parent="FakeMushroom2/FaceMushroom3" unique_id=1658046301 instance=ExtResource("25_fh13f")]
+position = Vector2(-37, -3)
+
+[node name="FakeMushroom2" parent="FakeMushroom2" unique_id=1130656751 instance=ExtResource("25_fh13f")]
+position = Vector2(27, -1)
+
+[node name="FaceMushroom2" parent="FakeMushroom2" unique_id=978850977 instance=ExtResource("24_luhhm")]
+position = Vector2(6, 39)
+
+[node name="FaceMushroom2" parent="." unique_id=1173807022 instance=ExtResource("24_luhhm")]
+position = Vector2(373, 347)
+
+[node name="FakeMushroom1" parent="." unique_id=1273190480 instance=ExtResource("25_fh13f")]
+position = Vector2(352, 344)
+
+[node name="Grandma" parent="." unique_id=1149326032 instance=ExtResource("21_xgqkh")]
+position = Vector2(639, 86)
+
+[node name="Grandma2" parent="." unique_id=1169325738 instance=ExtResource("21_ctatt")]
+position = Vector2(30, -39)
+
+[node name="Boy" parent="." unique_id=901870445 instance=ExtResource("4_xo05s")]
+position = Vector2(307, 321)
+
+[node name="LastSporeGoTo" parent="." unique_id=636711480 instance=ExtResource("26_fh13f")]
+position = Vector2(-32, -844)
+
 [node name="ITEMS" type="Node2D" parent="." unique_id=1806159710]
 y_sort_enabled = true
 
 [node name="Electrod" parent="ITEMS" unique_id=2104509306 instance=ExtResource("18_2lf6f")]
 position = Vector2(-92, 159)
 
-[node name="Player" parent="." unique_id=1779298022 node_paths=PackedStringArray("world_size") instance=ExtResource("1_nnsk1")]
-world_size = NodePath("../WorldSize")
+[node name="Player" parent="." unique_id=1779298022 instance=ExtResource("1_nnsk1")]
+position = Vector2(-49, 145)

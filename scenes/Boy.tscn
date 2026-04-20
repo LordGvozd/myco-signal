@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mm8esk324vd5"]
 
-[ext_resource type="Texture2D" uid="uid://dnn3tic15tswb" path="res://sprites/boy_idle1-sheet.png" id="1_f22sb"]
+[ext_resource type="Texture2D" uid="uid://dnn3tic15tswb" path="res://sprites/NPC/boy_idle1-sheet.png" id="1_f22sb"]
 [ext_resource type="Script" uid="uid://b22gpap1h7kp1" path="res://scripts/boy.gd" id="2_ee6vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6vw"]

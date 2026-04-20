@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bfj21jayb2oub"]
+
+[ext_resource type="Texture2D" uid="uid://c8g6rlji72lub" path="res://sprites/mushrooms/mushroom3.png" id="1_nxhtu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_584tj"]
+radius = 4.0
+height = 8.0
+
+[node name="FaceMushroom2" type="Node2D" unique_id=885311355]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621332851]
+texture_filter = 1
+texture = ExtResource("1_nxhtu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=216408371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068729268]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_584tj")

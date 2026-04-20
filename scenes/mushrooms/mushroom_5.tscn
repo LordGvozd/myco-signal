@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://ds7u04y2ngv20"]
 
 [ext_resource type="Texture2D" uid="uid://wbc6uietpc8l" path="res://sprites/mushrooms/mushroom8.png" id="1_i680h"]
+[ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_eif8r"]
+[ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_beeh5"]
+[ext_resource type="AudioStream" uid="uid://cli34hdnpb3g4" path="res://sounds/silence.mp3" id="4_np7tn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d3sq"]
 height = 44.0
+
+[sub_resource type="Resource" id="Resource_xpiog"]
+script = ExtResource("3_beeh5")
+melody = Array[int]([23, 4, 34, 3, 57, 2, 53, 1, 73])
+metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7cbq"]
+size = Vector2(41.5, 44)
 
 [node name="Mushroom5" type="Node2D" unique_id=1612334020]
 
@@ -16,3 +27,14 @@ texture = ExtResource("1_i680h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=12813502]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_3d3sq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=197229310]
+position = Vector2(0, -1)
+script = ExtResource("2_eif8r")
+melody = SubResource("Resource_xpiog")
+sound = ExtResource("4_np7tn")
+number = 7
+phrase_text = "я гриб круто 2оой"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1441413227]
+shape = SubResource("RectangleShape2D_l7cbq")
