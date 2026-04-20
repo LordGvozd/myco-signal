@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://pfxp43xnr271"]
+
+[ext_resource type="Texture2D" uid="uid://ycgahm3c748w" path="res://sprites/objects/electric.png" id="1_0h7ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwkep"]
+size = Vector2(20, 7)
+
+[node name="Electrod" type="Node2D" unique_id=2104509306]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71589210]
+texture_filter = 1
+texture = ExtResource("1_0h7ud")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1085668611]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=548405664]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bwkep")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://e1r5sw7sg3ai"]
+
+[ext_resource type="Texture2D" uid="uid://h4c2yj1texs" path="res://sprites/objects/berezka_bol.png" id="1_pwqio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwqio"]
+size = Vector2(113, 98)
+
+[node name="BerezkaMnogo2" type="Node2D" unique_id=1216615253]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1147016723]
+texture = ExtResource("1_pwqio")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1939372381]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1429554342]
+position = Vector2(2.5, 4)
+shape = SubResource("RectangleShape2D_pwqio")
