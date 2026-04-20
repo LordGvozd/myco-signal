@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Myco Signal"
-run/main_scene="uid://by6e0fvxdwjdj"
+run/main_scene="uid://rmborfq6y5dt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,9 @@ Bus="*uid://dp3fgxk7vplm4"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+window/size/mode=3
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -40,3 +42,4 @@ interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+viewport/hdr_2d=true
