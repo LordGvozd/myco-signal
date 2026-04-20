@@ -712,7 +712,6 @@ offset_bottom = 572.0
 script = ExtResource("5_qlg0r")
 
 [node name="Electrod" parent="CanvasLayer" unique_id=1868941164 instance=ExtResource("9_ur7pv")]
-visible = false
 offset_left = -1.0
 offset_right = -1.0
 size_flags_horizontal = 3
