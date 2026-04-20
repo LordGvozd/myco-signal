@@ -9,7 +9,9 @@ size = Vector2(7, 40.25)
 texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1151181323]
+position = Vector2(0, 41)
 texture = ExtResource("1_duor5")
+offset = Vector2(0, -41)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1305237136]
 

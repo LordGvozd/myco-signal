@@ -596,6 +596,7 @@ script = ExtResource("2_qfm1y")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=292313141]
 modulate = Color(1, 1, 1, 0.4627451)
 self_modulate = Color(0.41874722, 0.00012475882, 0.42045853, 0.345)
+y_sort_enabled = true
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ur7pv")
 position = Vector2(-7.1525574e-07, 12)
@@ -688,6 +689,8 @@ size_flags_vertical = 3
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1315098563]
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 script = ExtResource("10_y4r1p")
 
 [node name="EnviromentPlayer" type="AudioStreamPlayer2D" parent="." unique_id=472609201]
