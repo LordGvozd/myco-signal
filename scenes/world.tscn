@@ -26,12 +26,13 @@
 [ext_resource type="PackedScene" uid="uid://dgcrj8li1uks1" path="res://scenes/mushrooms/mushroom_4.tscn" id="17_navra"]
 [ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="18_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://ds7u04y2ngv20" path="res://scenes/mushrooms/mushroom_5.tscn" id="18_luhhm"]
+[ext_resource type="PackedScene" uid="uid://bjx3nlfuvw4rj" path="res://scenes/spore.tscn" id="19_rup4s"]
 [ext_resource type="PackedScene" uid="uid://84tfhn437ilu" path="res://scenes/grandpa.tscn" id="21_ctatt"]
 [ext_resource type="PackedScene" uid="uid://dc2xs77guqff1" path="res://scenes/grandma.tscn" id="21_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://8yui73wg2e2p" path="res://scenes/enviroment/rock_1.tscn" id="23_fh13f"]
 [ext_resource type="PackedScene" uid="uid://bfj21jayb2oub" path="res://scenes/enviroment/Face_mushroom_2.tscn" id="24_luhhm"]
 [ext_resource type="PackedScene" uid="uid://bi0c14ic3gw14" path="res://scenes/enviroment/Fake_mushroom_1.tscn" id="25_fh13f"]
-[ext_resource type="PackedScene" uid="uid://due8u6roxu3dd" path="res://scenes/mushrooms/Last_Spore_go_to.tscn" id="26_fh13f"]
+[ext_resource type="PackedScene" uid="uid://dap0algvlu85n" path="res://scenes/mushrooms/Last_Spore_go_to.tscn" id="26_fh13f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8fc1"]
 texture = ExtResource("1_4wyf3")
@@ -843,6 +844,9 @@ position = Vector2(423, 220)
 
 [node name="Mushroom7" parent="BASE/=== MUSHROOMS ===" unique_id=2069105752 instance=ExtResource("18_luhhm")]
 position = Vector2(543, -321)
+
+[node name="Spore" parent="BASE/=== MUSHROOMS ===" unique_id=191461626 instance=ExtResource("19_rup4s")]
+position = Vector2(-107, 210)
 
 [node name="===ENVIROMENTS===" type="Node2D" parent="BASE" unique_id=704158909]
 y_sort_enabled = true
