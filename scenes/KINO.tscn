@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dmnygw5n03tpq"]
+
+[ext_resource type="VideoStream" uid="uid://c1slb7knqm1rb" path="res://sprites/edded-_2_.ogv" id="1_2xisc"]
+
+[node name="Kino" type="CanvasLayer" unique_id=1296001526]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1380156102]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -15.0
+offset_right = 996.0
+offset_bottom = 465.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.58856374, 0.58856374)
+stream = ExtResource("1_2xisc")
+autoplay = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8yui73wg2e2p"]
 
-[ext_resource type="Texture2D" uid="uid://difsqsn8uknmh" path="res://sprites/rock1.png" id="1_lukbo"]
+[ext_resource type="Texture2D" uid="uid://difsqsn8uknmh" path="res://sprites/nature/rock1.png" id="1_lukbo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6036f"]
 radius = 2.0

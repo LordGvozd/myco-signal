@@ -33,7 +33,7 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 805.0
 offset_bottom = 605.0
-color = Color(1, 1, 1, 0.16078432)
+color = Color(1, 1, 1, 0.578)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1649487195]
 material = SubResource("ShaderMaterial_e072f")
@@ -41,3 +41,4 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 805.0
 offset_bottom = 605.0
+color = Color(0.973535, 0.9735351, 0.973535, 1)

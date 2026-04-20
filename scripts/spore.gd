@@ -2,8 +2,8 @@ extends GPUParticles2D
 
 @export var speed: int = 100
 
-var wave_amplitude: float = 15.0  
-var accuracy: float = 10   
+var wave_amplitude: float = 10.0  
+var accuracy: float = 4   
 
 var direction: Vector2 = Vector2.ZERO
 var target: Vector2 

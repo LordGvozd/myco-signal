@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://ds7u04y2ngv20"]
 
 [ext_resource type="Texture2D" uid="uid://wbc6uietpc8l" path="res://sprites/mushrooms/mushroom8.png" id="1_i680h"]
+[ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_eif8r"]
+[ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_beeh5"]
+[ext_resource type="AudioStream" uid="uid://d000f0y7oket5" path="res://sounds/thunder.mp3" id="4_eif8r"]
+[ext_resource type="Material" uid="uid://bih36mtlvlan0" path="res://shader/vhs.tres" id="5_beeh5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d3sq"]
 height = 44.0
 
-[node name="Mushroom5" type="Node2D" unique_id=1612334020]
+[sub_resource type="Resource" id="Resource_xpiog"]
+script = ExtResource("3_beeh5")
+melody = Array[int]([77, 4, 77, 3, 77, 2, 77, 1, 18])
+metadata/_custom_type_script = "uid://bbavpsg2nr4uh"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7cbq"]
+size = Vector2(41.5, 44)
+
+[node name="Mushroom7" type="Node2D" unique_id=1612334020]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1426762275]
 texture_filter = 1
@@ -16,3 +28,15 @@ texture = ExtResource("1_i680h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=12813502]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_3d3sq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=197229310]
+position = Vector2(0, -1)
+script = ExtResource("2_eif8r")
+melody = SubResource("Resource_xpiog")
+sound = ExtResource("4_eif8r")
+shader = ExtResource("5_beeh5")
+number = 7
+phrase_text = "я гриб круто 2оой"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1441413227]
+shape = SubResource("RectangleShape2D_l7cbq")

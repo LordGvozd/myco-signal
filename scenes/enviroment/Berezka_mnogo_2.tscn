@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e1r5sw7sg3ai"]
 
-[ext_resource type="Texture2D" uid="uid://h4c2yj1texs" path="res://sprites/objects/berezka_bol.png" id="1_pwqio"]
+[ext_resource type="Texture2D" uid="uid://h4c2yj1texs" path="res://sprites/nature/berezka_bol.png" id="1_pwqio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwqio"]
 size = Vector2(113, 98)
