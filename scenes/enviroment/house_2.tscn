@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d32nwko460usm"]
+
+[ext_resource type="Texture2D" uid="uid://crto5rpl1n5kq" path="res://sprites/bildings/house2 (1).png" id="1_ksc3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyet"]
+size = Vector2(27, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aibk6"]
+size = Vector2(125.5, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3coq"]
+size = Vector2(3, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8c2u"]
+size = Vector2(86, 5)
+
+[node name="house_2" type="Node2D" unique_id=1216615253]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584954280]
+texture_filter = 1
+position = Vector2(2, 45)
+texture = ExtResource("1_ksc3w")
+offset = Vector2(-2, -45)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1634935536]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=578180943]
+position = Vector2(-41, 50)
+shape = SubResource("RectangleShape2D_jpyet")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1000940554]
+position = Vector2(-98.5, 50)
+shape = SubResource("RectangleShape2D_jpyet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=542108914]
+position = Vector2(39.75, 29.5)
+shape = SubResource("RectangleShape2D_aibk6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=162477416]
+position = Vector2(-110.5, 21.5)
+shape = SubResource("RectangleShape2D_a3coq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=224234421]
+position = Vector2(-66, -1)
+shape = SubResource("RectangleShape2D_j8c2u")

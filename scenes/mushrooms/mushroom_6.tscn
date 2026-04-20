@@ -33,7 +33,7 @@ shape = SubResource("CapsuleShape2D_rn76n")
 script = ExtResource("2_8neoy")
 melody = SubResource("Resource_7k3fu")
 sound = ExtResource("4_r35da")
-number = 3
+number = 4
 phrase_text = "я гриб круто 2оой"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1091073769]
