@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://rmborfq6y5dt"]
 
 [ext_resource type="Texture2D" uid="uid://d0me42v34erue" path="res://sprites/tile.png" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://cxdd4an6nt8oq" path="res://scripts/on_mood_changed.gd" id="1_7iits"]
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://bplusw66xkljx" path="res://scripts/world.gd" id="1_oo54l"]
+[ext_resource type="PackedScene" uid="uid://bybx8e2ujst65" path="res://scenes/tutorial_panel.tscn" id="2_kpybi"]
 [ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/InteractableArea.gd" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="2_w7kh3"]
-[ext_resource type="PackedScene" path="res://scenes/Boy.tscn" id="4_xo05s"]
+[ext_resource type="PackedScene" uid="uid://mm8esk324vd5" path="res://scenes/Boy.tscn" id="4_xo05s"]
 [ext_resource type="PackedScene" uid="uid://bix3khrepo458" path="res://scenes/enviroment/tree_1.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://c2hcoo322tvkw" path="res://scenes/enviroment/tree_2.tscn" id="5_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bisukx310u286" path="res://scenes/enviroment/tree_4.tscn" id="6_e3hyu"]
@@ -19,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://jra458feypme" path="res://scenes/enviroment/rock_2.tscn" id="10_xo05s"]
 [ext_resource type="PackedScene" uid="uid://dwsjdo57kjoh4" path="res://scenes/enviroment/Buhanka.tscn" id="11_dss4m"]
 [ext_resource type="PackedScene" uid="uid://dvtuqv1ph5fsq" path="res://scenes/mushrooms/mushroom_6.tscn" id="16_pm21f"]
-[ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/enviroment/electrod.tscn" id="18_2lf6f"]
+[ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="18_2lf6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 size = Vector2(62.5, 60)
@@ -82,8 +85,13 @@ sources/0 = SubResource("TileSetAtlasSource_o8fc1")
 
 [node name="World" type="Node2D" unique_id=1635672157]
 y_sort_enabled = true
+script = ExtResource("1_oo54l")
+
+[node name="TutorialPanel" parent="." unique_id=1786381506 instance=ExtResource("2_kpybi")]
+visible = false
 
 [node name="OnDark" type="Node2D" parent="." unique_id=137377075]
+script = ExtResource("1_7iits")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="OnDark" unique_id=571841920]
 color = Color(0.5251013, 0.5251013, 0.5251013, 1)
@@ -308,6 +316,9 @@ position = Vector2(-104, 114)
 
 [node name="Electrod" parent="." unique_id=2104509306 instance=ExtResource("18_2lf6f")]
 position = Vector2(-92, 159)
+
+[node name="Mushroom18" parent="." unique_id=114502701 instance=ExtResource("8_lakw3")]
+position = Vector2(203, 292)
 
 [node name="Mushroom17" parent="." unique_id=1658081793 instance=ExtResource("7_7t5mc")]
 position = Vector2(-107, 211)

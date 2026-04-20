@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bybx8e2ujst65"]
+
+[ext_resource type="Script" uid="uid://b7rqh5ollr2pc" path="res://scripts/tutorial_panel.gd.gd" id="1_0bdlw"]
+
+[node name="TutorialPanel" type="CanvasLayer" unique_id=1786381506]
+
+[node name="Control" type="Control" parent="." unique_id=2058945889]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bdlw")
+
+[node name="Button" type="Button" parent="Control" unique_id=108002004]
+z_index = 1
+layout_mode = 0
+offset_left = 354.0
+offset_top = 410.0
+offset_right = 505.0
+offset_bottom = 464.0
+text = "все понял
+забрать электрод"
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2139687477]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=978773468]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 276.0
+offset_right = 487.0
+offset_bottom = 299.0
+text = "тут туториал"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

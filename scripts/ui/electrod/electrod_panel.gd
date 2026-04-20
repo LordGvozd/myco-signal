@@ -127,7 +127,6 @@ func hide_all() -> void:
 	
 	for btn in buttons:
 		btn.modulate = Color.GRAY
-		
 	
 	
 func show_all() -> void:
