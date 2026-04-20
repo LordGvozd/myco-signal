@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://6ptjt0mx4oxq"]
+
+[ext_resource type="Texture2D" uid="uid://bdd81v088lt1r" path="res://sprites/objects/berezka_mal.png" id="1_aibk6"]
+
+[node name="BerezkaMnogo1" type="Node2D" unique_id=1216615253]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584954280]
+texture_filter = 1
+texture = ExtResource("1_aibk6")

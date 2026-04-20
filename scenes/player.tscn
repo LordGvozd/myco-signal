@@ -385,7 +385,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -426,7 +426,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_side",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -467,7 +467,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1779298022 groups=["player"]]
@@ -488,7 +488,7 @@ shape = SubResource("CapsuleShape2D_chuli")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2080272660]
 sprite_frames = SubResource("SpriteFrames_ke2ow")
-animation = &"idle_down"
+animation = &"walk_up"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509683948]
 
@@ -519,6 +519,7 @@ offset_bottom = 572.0
 script = ExtResource("5_qlg0r")
 
 [node name="Electrod" parent="CanvasLayer" unique_id=1868941164 instance=ExtResource("9_ur7pv")]
+visible = false
 offset_left = -1.0
 offset_right = -1.0
 size_flags_horizontal = 3

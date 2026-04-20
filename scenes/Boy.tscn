@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://mm8esk324vd5"]
+
+[ext_resource type="Texture2D" uid="uid://dnn3tic15tswb" path="res://sprites/boy_idle1-sheet.png" id="1_f22sb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee6vw"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6011h"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgsc0"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivdcg"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy1qt"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aimx"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0084"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kg68"]
+atlas = ExtResource("1_f22sb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7y3jj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee6vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6011h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgsc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivdcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy1qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aimx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0084")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kg68")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f46kg"]
+radius = 4.0
+height = 8.0
+
+[node name="Boy" type="Node2D" unique_id=901870445]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1015827059]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7y3jj")
+animation = &"new_animation"
+frame_progress = 0.5667146
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=119021246]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1988119141]
+position = Vector2(-1, 3)
+shape = SubResource("CapsuleShape2D_f46kg")

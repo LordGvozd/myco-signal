@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://e1r5sw7sg3ai"]
+
+[ext_resource type="Texture2D" uid="uid://h4c2yj1texs" path="res://sprites/objects/berezka_bol.png" id="1_pwqio"]
+
+[node name="BerezkaMnogo2" type="Node2D" unique_id=1216615253]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1147016723]
+texture = ExtResource("1_pwqio")
