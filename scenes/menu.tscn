@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://by6e0fvxdwjdj"]
+
+[ext_resource type="Script" uid="uid://cybw3yshrcuqx" path="res://scenes/control.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bsdbphbxsb6rf" path="res://sprites/menu/menu_back.png" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://byl2wh7dafpil" path="res://sprites/menu/play_button_1.png" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c2omoxu1rgau8" path="res://sprites/menu/play_button_2.png" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://ciyv65q2n7hw2" path="res://sprites/menu/exit_button_1.png" id="4_v86rl"]
+[ext_resource type="Texture2D" uid="uid://b455pxjtp2xxm" path="res://sprites/menu/exit_button_2.png" id="6_v86rl"]
+
+[node name="Control" type="Control" unique_id=1089604946]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=465811430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4ytvr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1388670954]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -87.0
+offset_right = 291.0
+offset_bottom = 254.0
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="play" type="TextureButton" parent="VBoxContainer" unique_id=82547162]
+texture_filter = 1
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("3_g3eks")
+texture_pressed = ExtResource("4_g3eks")
+texture_hover = ExtResource("4_g3eks")
+
+[node name="exit" type="TextureButton" parent="VBoxContainer" unique_id=625904823]
+texture_filter = 1
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("4_v86rl")
+texture_pressed = ExtResource("6_v86rl")
+texture_hover = ExtResource("6_v86rl")
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_button_pressed"]

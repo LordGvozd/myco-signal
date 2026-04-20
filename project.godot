@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Myco Signal"
-run/main_scene="uid://rmborfq6y5dt"
+run/main_scene="uid://by6e0fvxdwjdj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
