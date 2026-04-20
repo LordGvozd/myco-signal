@@ -73,6 +73,7 @@ frame_4/texture = ExtResource("17_6ayij")
 frame_4/duration = 0.1
 
 [node name="Electrod" type="Control" unique_id=1868941164 node_paths=PackedStringArray("buttons")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
