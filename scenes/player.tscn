@@ -17,6 +17,8 @@
 [ext_resource type="Shader" uid="uid://3b7syhxjj03c" path="res://shader/player.gdshader" id="11_jej6c"]
 [ext_resource type="Script" uid="uid://dthchobqyw2f4" path="res://scripts/matadora_effect.gd" id="13_f1ej7"]
 [ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="16_a8ls1"]
+[ext_resource type="AudioStream" uid="uid://dc1adjtk7jj22" path="res://sounds/grass_steps.mp3" id="18_fulsm"]
+[ext_resource type="Script" uid="uid://b4s21ptfxplk3" path="res://scripts/player_sound.gd" id="19_4r5pv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ur7pv"]
 
@@ -703,3 +705,7 @@ process_material = SubResource("ParticleProcessMaterial_oprun")
 
 [node name="Fog" parent="." unique_id=964251376 instance=ExtResource("16_a8ls1")]
 visible = false
+
+[node name="Steps" type="AudioStreamPlayer2D" parent="." unique_id=1726319817]
+stream = ExtResource("18_fulsm")
+script = ExtResource("19_4r5pv")

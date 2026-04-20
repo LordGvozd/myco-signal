@@ -37,8 +37,6 @@ sources/0 = SubResource("TileSetAtlasSource_k0juu")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 size = Vector2(62.5, 60)
 
-[sub_resource type="Environment" id="Environment_4mrxx"]
-
 [node name="World" type="Node2D" unique_id=1635672157]
 y_sort_enabled = true
 script = ExtResource("1_qfnet")
@@ -104,9 +102,6 @@ position = Vector2(-54, -48)
 
 [node name="Mushroom3" parent="." unique_id=823849299 instance=ExtResource("8_4mrxx")]
 position = Vector2(66, -78)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=238148634]
-environment = SubResource("Environment_4mrxx")
 
 [node name="Mushroom4" parent="." unique_id=2094172363 instance=ExtResource("9_7r4gi")]
 position = Vector2(-8, -131)
