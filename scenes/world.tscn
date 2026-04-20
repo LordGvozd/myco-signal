@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://bplusw66xkljx" path="res://scripts/world.gd" id="1_oo54l"]
 [ext_resource type="PackedScene" uid="uid://bybx8e2ujst65" path="res://scenes/tutorial_panel.tscn" id="2_kpybi"]
-[ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/InteractableArea.gd" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="2_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://mm8esk324vd5" path="res://scenes/Boy.tscn" id="4_xo05s"]
 [ext_resource type="PackedScene" uid="uid://bix3khrepo458" path="res://scenes/enviroment/tree_1.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://c2hcoo322tvkw" path="res://scenes/enviroment/tree_2.tscn" id="5_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bisukx310u286" path="res://scenes/enviroment/tree_4.tscn" id="6_e3hyu"]
@@ -22,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://jra458feypme" path="res://scenes/enviroment/rock_2.tscn" id="10_xo05s"]
 [ext_resource type="PackedScene" uid="uid://dwsjdo57kjoh4" path="res://scenes/enviroment/Buhanka.tscn" id="11_dss4m"]
 [ext_resource type="PackedScene" uid="uid://dvtuqv1ph5fsq" path="res://scenes/mushrooms/mushroom_6.tscn" id="16_pm21f"]
-[ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="18_2lf6f"]
+[ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="20_7iits"]
+[ext_resource type="PackedScene" uid="uid://bjx3nlfuvw4rj" path="res://scenes/spore.tscn" id="21_oo54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8fc1"]
 texture = ExtResource("1_4wyf3")
@@ -90,21 +89,18 @@ visible = false
 [node name="OnDark" type="Node2D" parent="." unique_id=137377075]
 script = ExtResource("1_7iits")
 
-[node name="TopLeft" type="Marker2D" parent="WorldSize" unique_id=1967630804]
-position = Vector2(-385, -1146)
-
-[node name="BottomRight" type="Marker2D" parent="WorldSize" unique_id=1104260037]
+[node name="WorldSize#BottomRight" type="Marker2D" parent="." unique_id=1104260037]
 position = Vector2(1001, 605)
 
-[node name="DARK_MODE" type="Node2D" parent="." unique_id=137377075]
+[node name="DARK_MODE" type="Node2D" parent="." unique_id=731639344]
 visible = false
 y_sort_enabled = true
 script = ExtResource("1_7iits")
 
+[node name="Fog" parent="DARK_MODE" unique_id=964251376 instance=ExtResource("2_w7kh3")]
+
 [node name="CanvasModulate" type="CanvasModulate" parent="DARK_MODE" unique_id=571841920]
 color = Color(0.5251013, 0.5251013, 0.5251013, 1)
-
-[node name="Fog" parent="DARK_MODE" unique_id=964251376 instance=ExtResource("2_w7kh3")]
 
 [node name="BASE" type="Node2D" parent="." unique_id=589231974]
 y_sort_enabled = true
@@ -326,12 +322,6 @@ position = Vector2(-104, 114)
 [node name="=== NPC ===" type="Node2D" parent="BASE" unique_id=1541030936]
 y_sort_enabled = true
 
-[node name="Mushroom18" parent="." unique_id=114502701 instance=ExtResource("8_lakw3")]
-position = Vector2(203, 292)
-
-[node name="Mushroom17" parent="." unique_id=1658081793 instance=ExtResource("7_7t5mc")]
-position = Vector2(-107, 211)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="BASE" unique_id=830321054]
 z_index = -4
 z_as_relative = false
@@ -341,11 +331,23 @@ tile_set = SubResource("TileSet_xo05s")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
+[node name="Mushroom18" parent="." unique_id=114502701 instance=ExtResource("8_lakw3")]
+position = Vector2(203, 292)
+
+[node name="Mushroom17" parent="." unique_id=2027572037 instance=ExtResource("7_7t5mc")]
+position = Vector2(-107, 211)
+
+[node name="WorldSize#TopLeft" type="Marker2D" parent="." unique_id=1967630804]
+position = Vector2(-385, -1146)
+
+[node name="Spore" parent="." unique_id=191461626 instance=ExtResource("21_oo54l")]
+z_index = -3
+position = Vector2(-108, 212)
+
 [node name="ITEMS" type="Node2D" parent="." unique_id=1806159710]
 y_sort_enabled = true
 
-[node name="Electrod" parent="ITEMS" unique_id=2104509306 instance=ExtResource("18_2lf6f")]
-position = Vector2(-92, 159)
+[node name="Electrod2" parent="ITEMS" unique_id=2104509306 instance=ExtResource("20_7iits")]
+position = Vector2(-83, 165)
 
-[node name="Player" parent="." unique_id=1779298022 node_paths=PackedStringArray("world_size") instance=ExtResource("1_nnsk1")]
-world_size = NodePath("../WorldSize")
+[node name="Player" parent="." unique_id=1779298022 instance=ExtResource("1_nnsk1")]
