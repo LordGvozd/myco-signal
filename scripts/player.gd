@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-const SPEED = 60.0
+const SPEED = 120.0
 var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN 
 var state: String = "idle"
