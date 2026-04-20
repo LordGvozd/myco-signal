@@ -3,11 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://d0me42v34erue" path="res://sprites/tile.png" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://50ywv28xjlwa" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://bplusw66xkljx" path="res://scripts/world.gd" id="1_qfnet"]
+[ext_resource type="Script" uid="uid://cxdd4an6nt8oq" path="res://scripts/on_mood_changed.gd" id="2_e3hyu"]
 [ext_resource type="Script" uid="uid://falcy7gs84kr" path="res://scripts/InteractableArea.gd" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://cpj1ldbsamuli" path="res://scenes/fog.tscn" id="2_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://bix3khrepo458" path="res://scenes/tree_1.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bsqjb53wskafo" path="res://scenes/mushrooms/mushroom_1.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bofx8xopv3m80" path="res://scenes/mushrooms/mushroom_2.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://hw4hpryq0bs" path="res://scenes/mushrooms/mushroom_3.tscn" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://dgcrj8li1uks1" path="res://scenes/mushrooms/mushroom_4.tscn" id="9_7r4gi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("1_4wyf3")
@@ -34,9 +37,22 @@ sources/0 = SubResource("TileSetAtlasSource_k0juu")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 size = Vector2(62.5, 60)
 
+[sub_resource type="Environment" id="Environment_4mrxx"]
+
 [node name="World" type="Node2D" unique_id=1635672157]
 y_sort_enabled = true
 script = ExtResource("1_qfnet")
+
+[node name="OnMoodChanged" type="Node2D" parent="." unique_id=1651313383]
+visible = false
+script = ExtResource("2_e3hyu")
+
+[node name="Fog" parent="OnMoodChanged" unique_id=964251376 instance=ExtResource("2_w7kh3")]
+z_index = 8
+
+[node name="CanvasModulate" type="CanvasModulate" parent="OnMoodChanged" unique_id=143588052]
+z_index = 5
+color = Color(0.39607844, 0.39607844, 0.39607844, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2074238337]
 z_index = -2
@@ -45,6 +61,7 @@ tile_map_data = PackedByteArray("AAAZAPT/AAAAAAMAAAAZAPX/AAAAAAAAAAAZAPb/AAAAAAE
 tile_set = SubResource("TileSet_71j4m")
 
 [node name="Player" parent="." unique_id=1779298022 instance=ExtResource("1_nnsk1")]
+position = Vector2(-348, -298)
 
 [node name="TestArea" type="Area2D" parent="." unique_id=1798075947]
 position = Vector2(69, 1)
@@ -87,6 +104,12 @@ position = Vector2(-54, -48)
 
 [node name="Mushroom3" parent="." unique_id=823849299 instance=ExtResource("8_4mrxx")]
 position = Vector2(66, -78)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=238148634]
+environment = SubResource("Environment_4mrxx")
+
+[node name="Mushroom4" parent="." unique_id=2094172363 instance=ExtResource("9_7r4gi")]
+position = Vector2(-8, -131)
 
 [connection signal="body_entered" from="TestArea" to="TestArea" method="_on_body_entered"]
 [connection signal="body_exited" from="TestArea" to="TestArea" method="_on_body_exited"]

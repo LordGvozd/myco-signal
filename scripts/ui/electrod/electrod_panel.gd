@@ -63,8 +63,7 @@ func _on_btn_down(index: int) -> void:
 			show_all()
 			
 		if correct_sequence == input_sequence:
-			print("WINWIN")
-			for i in range(10):
+			for i in range(5):
 					for btn in buttons:
 						if i % 2 == 0:
 							btn.modulate = btn.base_color
