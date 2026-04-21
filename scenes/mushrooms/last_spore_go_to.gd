@@ -5,6 +5,9 @@ func _ready() -> void:
 	$Area2D/CollisionShape2D.disabled = true
 	Bus.subscribe(MushroomDone, func(e): 
 		if e.number == 7:
+			var spore_event = SporeEvent.new()
+			spore_event.target_position = global_position
+			Bus.create_event(spore_event)
 			$Area2D/CollisionShape2D.disabled = false
 	)
 
