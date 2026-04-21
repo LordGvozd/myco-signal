@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8ncw5stcx44" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://cxdd4an6nt8oq" path="res://scripts/on_mood_changed.gd" id="2_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://b5a1wt5c5jh5k" path="res://sprites/shadow.png" id="2_smehm"]
+[ext_resource type="Texture2D" uid="uid://c58cmpa0lwk5l" path="res://sprites/player_lamp_light.png" id="3_i4ail"]
 [ext_resource type="Texture2D" uid="uid://cuge4422p23mk" path="res://sprites/player/player_idle_down1-sheet (2).png" id="3_smehm"]
 [ext_resource type="Script" uid="uid://gh1he0gwvuwk" path="res://scripts/ui/player_phrase.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://83256h1dofpl" path="res://sprites/player/player_walk_down1-sheet (2).png" id="4_ur7pv"]
@@ -593,6 +594,11 @@ script = ExtResource("1_g2els")
 
 [node name="MoodChanhed" type="Node2D" parent="." unique_id=791464158]
 script = ExtResource("2_qfm1y")
+
+[node name="PointLight2D" type="PointLight2D" parent="MoodChanhed" unique_id=1707224637]
+z_index = -6
+color = Color(1, 1, 0.44796598, 1)
+texture = ExtResource("3_i4ail")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=292313141]
 modulate = Color(1, 1, 1, 0.4627451)
