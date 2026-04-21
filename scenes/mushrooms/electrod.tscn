@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_bwkep")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1511005378]
 script = ExtResource("2_rmufm")
+hint_message = "Press E to interact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1014210841]
 shape = SubResource("RectangleShape2D_qu3mh")

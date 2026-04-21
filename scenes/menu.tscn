@@ -54,5 +54,5 @@ texture_normal = ExtResource("4_v86rl")
 texture_pressed = ExtResource("6_v86rl")
 texture_hover = ExtResource("6_v86rl")
 
-[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed_AAA"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_button_pressed"]

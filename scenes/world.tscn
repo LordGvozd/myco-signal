@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dgcrj8li1uks1" path="res://scenes/mushrooms/mushroom_4.tscn" id="17_navra"]
 [ext_resource type="PackedScene" uid="uid://pfxp43xnr271" path="res://scenes/mushrooms/electrod.tscn" id="18_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://ds7u04y2ngv20" path="res://scenes/mushrooms/mushroom_5.tscn" id="18_luhhm"]
+[ext_resource type="PackedScene" uid="uid://bjx3nlfuvw4rj" path="res://scenes/spore.tscn" id="19_rup4s"]
 [ext_resource type="PackedScene" path="res://scenes/grandpa.tscn" id="21_ctatt"]
 [ext_resource type="PackedScene" path="res://scenes/grandma.tscn" id="21_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://8yui73wg2e2p" path="res://scenes/enviroment/rock_1.tscn" id="23_fh13f"]
@@ -126,6 +127,7 @@ position = Vector2(-385, -1146)
 position = Vector2(1001, 605)
 
 [node name="DARK_MODE" type="Node2D" parent="." unique_id=779143329]
+visible = false
 y_sort_enabled = true
 script = ExtResource("1_7iits")
 
@@ -962,6 +964,18 @@ position = Vector2(588, 110)
 
 [node name="Mushroom4" parent="BASE/=== MUSHROOMS ===" unique_id=886682240 instance=ExtResource("16_pm21f")]
 position = Vector2(136, -22)
+
+[node name="Mushroom5" parent="BASE/=== MUSHROOMS ===" unique_id=1431624070 instance=ExtResource("16_37qwj")]
+position = Vector2(-270, -219)
+
+[node name="Mushroom6" parent="BASE/=== MUSHROOMS ===" unique_id=319039193 instance=ExtResource("17_navra")]
+position = Vector2(423, 220)
+
+[node name="Mushroom7" parent="BASE/=== MUSHROOMS ===" unique_id=1571088270 instance=ExtResource("18_luhhm")]
+position = Vector2(543, -321)
+
+[node name="Spore" parent="BASE/=== MUSHROOMS ===" unique_id=191461626 instance=ExtResource("19_rup4s")]
+position = Vector2(-107, 210)
 
 [node name="===ENVIROMENTS===" type="Node2D" parent="BASE" unique_id=704158909]
 y_sort_enabled = true

@@ -36,7 +36,7 @@ melody = SubResource("Resource_1242y")
 sound = ExtResource("4_hw3q4")
 shader = ExtResource("5_82725")
 number = 1
-phrase_text = "я гриб круто 2оой"
+hint_message = "Press E to interact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=230538001]
 shape = SubResource("RectangleShape2D_84rtj")

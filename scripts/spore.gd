@@ -2,7 +2,7 @@ extends GPUParticles2D
 
 @export var speed: int = 100
 
-var wave_amplitude: float = 10.0  
+var wave_amplitude: float = 5 
 var accuracy: float = 4   
 
 var direction: Vector2 = Vector2.ZERO
@@ -34,23 +34,23 @@ func _process(delta: float) -> void:
 		direction.x = 0
 	elif self.global_position.x > target.x:
 		direction.x = -1
-		move(delta)
-		return
+
+		
 	elif self.global_position.x < target.x:
 		direction.x = 1
-		move(delta)
-		return
+	
+		
 
 	if abs(self.global_position.y - target.y) < 2:
 		direction.y = 0
 	elif self.global_position.y > target.y:
 		direction.y = -1
-		move(delta)
-		return
+		
 	elif self.global_position.y < target.y:
 		direction.y = 1
-		move(delta)
-		return
+		
+	move(delta)
+		
 
 	
 func move(delta: float) -> void:
