@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://hucihbd2evyd" path="res://sprites/player/player_walk_top1-sheet (2).png" id="6_d2wvv"]
 [ext_resource type="Script" uid="uid://dl1ilaxnk0gsm" path="res://scripts/effect_rect.gd" id="7_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://d000f0y7oket5" path="res://sounds/thunder.mp3" id="7_oprun"]
+[ext_resource type="Texture2D" uid="uid://c1drx5s08bm7q" path="res://sprites/menu/tutorial.png" id="9_a38lo"]
 [ext_resource type="PackedScene" uid="uid://ch7jb2tu42kba" path="res://scenes/electrod.tscn" id="9_ur7pv"]
+[ext_resource type="FontFile" uid="uid://xq1xqblrc4ba" path="res://fonts/VCROSDMono[NolivantNTEdit]-Regular.ttf" id="10_4ni07"]
 [ext_resource type="Script" uid="uid://c7l73jgnsqr" path="res://scripts/camera_2d.gd" id="10_y4r1p"]
 [ext_resource type="VideoStream" uid="uid://nfdmunffsjku" path="res://sounds/boom00000000.ogv" id="11_3v2ag"]
 [ext_resource type="Shader" uid="uid://3b7syhxjj03c" path="res://shader/player.gdshader" id="11_jej6c"]
@@ -480,6 +482,8 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Theme" id="Theme_l71n6"]
+
 [sub_resource type="Animation" id="Animation_oprun"]
 length = 0.001
 tracks/0/type = "value"
@@ -537,6 +541,10 @@ shader = ExtResource("11_jej6c")
 shader_parameter/chroma_key_color = Color(0, 0, 0, 1)
 shader_parameter/pickup_range = 0.1
 shader_parameter/fade_amount = 0.05
+
+[sub_resource type="Theme" id="Theme_a38lo"]
+
+[sub_resource type="Theme" id="Theme_4ni07"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oprun"]
 blend_mode = 1
@@ -613,33 +621,69 @@ animation = &"walk_up"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509683948]
 
-[node name="Tutor_ui" type="Control" parent="CanvasLayer" unique_id=677804028]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1463080294]
 visible = false
+texture_filter = 1
 layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_60mlk")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control" unique_id=1719626981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -274.80005
+offset_right = 280.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_a38lo")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=1444956175]
+z_index = 1
+layout_mode = 0
+offset_left = -78.0
+offset_top = 162.0
+offset_right = 73.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_4ni07")
+text = "got it"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=482888398]
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("16_60mlk")
 
-[node name="Button" type="Button" parent="CanvasLayer/Tutor_ui" unique_id=796797394]
-z_index = 12
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=528259133]
 layout_mode = 0
-offset_left = 354.0
-offset_top = 410.0
-offset_right = 505.0
-offset_bottom = 464.0
-text = "все понял
-забрать электрод"
-
-[node name="Label" type="Label" parent="CanvasLayer/Tutor_ui" unique_id=1312179544]
-layout_mode = 0
-offset_left = 383.0
-offset_top = 276.0
-offset_right = 487.0
-offset_bottom = 299.0
-text = "тут туториал"
+offset_left = -289.0
+offset_top = -103.0
+offset_right = 293.0
+offset_bottom = 288.0
+theme = SubResource("Theme_l71n6")
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("10_4ni07")
+theme_override_font_sizes/font_size = 21
+text = "Use an electronic transmitter to decipher 
+mushroom signals. To receive a signal, 
+you need to remember the sequence of notes 
+in the melody and enter it. Once entered correctly, 
+a trail of spores 
+will follow from the mushroom,
+leading you to the next mushroom."
+horizontal_alignment = 1
 
 [node name="ThunderScreen" type="ColorRect" parent="CanvasLayer" unique_id=1903817149]
 visible = false
@@ -685,7 +729,6 @@ color = Color(1, 1, 1, 0)
 script = ExtResource("7_d2wvv")
 
 [node name="PlayerUI" type="Control" parent="CanvasLayer" unique_id=1735401902]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -697,18 +740,23 @@ grow_vertical = 2
 
 [node name="CharacterPhrase" type="Label" parent="CanvasLayer/PlayerUI" unique_id=2034136808]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 36.0
-offset_right = 101.0
-offset_bottom = 59.0
+offset_left = -79.0
+offset_top = -335.0
+offset_right = -14.0
+offset_bottom = -312.0
+theme = SubResource("Theme_a38lo")
+theme_override_fonts/font = ExtResource("10_4ni07")
 script = ExtResource("4_dqkch")
 
 [node name="Hint" type="Label" parent="CanvasLayer/PlayerUI" unique_id=1028423144]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 549.0
-offset_right = 199.0
-offset_bottom = 572.0
+offset_left = 131.0
+offset_top = 456.0
+offset_right = 304.0
+offset_bottom = 479.0
+theme = SubResource("Theme_4ni07")
+theme_override_fonts/font = ExtResource("10_4ni07")
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_qlg0r")
 
 [node name="Electrod" parent="CanvasLayer" unique_id=1868941164 instance=ExtResource("9_ur7pv")]
@@ -745,4 +793,4 @@ visible = false
 stream = ExtResource("18_fulsm")
 script = ExtResource("19_4r5pv")
 
-[connection signal="pressed" from="CanvasLayer/Tutor_ui/Button" to="CanvasLayer/Tutor_ui" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]

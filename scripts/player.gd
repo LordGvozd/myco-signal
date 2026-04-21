@@ -97,3 +97,7 @@ func AnimDirection() -> String:
 		return "up"
 	else:
 		return "side"
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
