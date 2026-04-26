@@ -26,3 +26,7 @@ visibility_rect = Rect2(-10000, -10000, 20000, 20000)
 process_material = SubResource("ParticleProcessMaterial_74lek")
 script = ExtResource("1_1awx3")
 speed = 30
+
+[node name="Timer" type="Timer" parent="." unique_id=285198011]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

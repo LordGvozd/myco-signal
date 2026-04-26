@@ -10,14 +10,24 @@ var target: Vector2
 
 var moving: bool = false
 var time: float = 0.0
+var pmaterial: ParticleProcessMaterial
 
 func _ready() -> void:
 	Bus.subscribe(SporeEvent, spore_to)
+	pmaterial = process_material
 
 func spore_to(event: SporeEvent) -> void:
 	target = event.target_position
 	moving = true
 	emitting = true
+	$"Timer".start(randi_range(1, 3))
+	
+func resize():
+	var new_emission_box_extends_x = randf_range(-3, 3)
+	if pmaterial.emission_box_extents.x + new_emission_box_extends_x > 1 and pmaterial.emission_box_extents.x + new_emission_box_extends_x < 7:
+		pmaterial.emission_box_extents.x += new_emission_box_extends_x
+	
+	$"Timer".start(randi_range(1, 3))
 	
 func _process(delta: float) -> void:
 	if not moving:
@@ -59,6 +69,10 @@ func move(delta: float) -> void:
 	
 	self.global_position.x += direction.x * delta * speed
 	self.global_position.y += direction.y * delta * speed
-	
+
 
 	global_position += Vector2(randi_range(-wave_amplitude, wave_amplitude), randi_range(-wave_amplitude, wave_amplitude))
+
+
+func _on_timer_timeout() -> void:
+	resize()
