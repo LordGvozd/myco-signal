@@ -3,6 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bx8xm7cxg83q7" path="res://sprites/NPC/grandpa_idle1-sheet.png" id="1_7wt42"]
 [ext_resource type="Texture2D" uid="uid://clsaigijqjvw1" path="res://sprites/NPC/negrandpa_idle1-sheet.png" id="1_quedy"]
 [ext_resource type="PackedScene" uid="uid://c7wolat0rlk8a" path="res://scenes/npc.tscn" id="2_hy06x"]
+[ext_resource type="AudioStream" uid="uid://d0rqr8iblcaex" path="res://sounds/NPC/grandpa/grib1.mp3" id="4_bv85e"]
+[ext_resource type="AudioStream" uid="uid://bhg00rmke2acy" path="res://sounds/NPC/grandpa/grib2.mp3" id="5_1q652"]
+[ext_resource type="AudioStream" uid="uid://dv4r057sirobi" path="res://sounds/NPC/grandpa/grib3.mp3" id="6_78xjs"]
+[ext_resource type="AudioStream" uid="uid://dejhs1a30a6od" path="res://sounds/NPC/grandpa/bubub1.mp3" id="7_ul64d"]
+[ext_resource type="AudioStream" uid="uid://d2b0rtdd7hf52" path="res://sounds/NPC/grandpa/bubbu2.mp3" id="8_cl6li"]
+[ext_resource type="AudioStream" uid="uid://dpop64af1nyfn" path="res://sounds/NPC/grandpa/bubub3.mp3" id="9_km32i"]
+[ext_resource type="AudioStream" uid="uid://da157o77kigq6" path="res://sounds/NPC/grandpa/bubu4.mp3" id="10_q8bhj"]
+[ext_resource type="AudioStream" uid="uid://ca6hemhn3y4wm" path="res://sounds/NPC/grandpa/bubub5.mp3" id="11_tehh5"]
+[ext_resource type="AudioStream" uid="uid://cwrlxlo5n0ay4" path="res://sounds/NPC/grandpa/death_groan_001_11759.mp3" id="12_km32i"]
+[ext_resource type="AudioStream" uid="uid://b7hr403bfkwlo" path="res://sounds/NPC/grandpa/zombies.mp3" id="13_q8bhj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_couwx"]
 atlas = ExtResource("1_quedy")
@@ -147,5 +157,10 @@ autoplay = "default"
 shape = SubResource("CapsuleShape2D_nvcgb")
 
 [node name="NPC" parent="." unique_id=907039592 node_paths=PackedStringArray("sprite") instance=ExtResource("2_hy06x")]
-messages_list = Array[String](["This is my mushroom", "I'm eating it", "AAAAAA"])
 sprite = NodePath("../AnimatedSprite2D")
+messages_list = Array[String](["What are you filming my mushroom for?", "But that's my mushroom!", "I'm eating it!!!"])
+sounds_list = Array[AudioStreamMP3]([ExtResource("4_bv85e"), ExtResource("5_1q652"), ExtResource("6_78xjs")])
+random_messages_list = Array[String](["To hell with it all!", "I'm sick and tired of this crap...", "I couldn't give a rat's ass anymore", "Feelin' like horseshit, if you ask me...", "Feelin' like horseshit, if you ask me..."])
+random_sounds_list = Array[AudioStreamMP3]([ExtResource("7_ul64d"), ExtResource("8_cl6li"), ExtResource("9_km32i"), ExtResource("10_q8bhj"), ExtResource("11_tehh5")])
+dark_messages_list = Array[String](["GO TO PEAK, BASTARD", "GO TO PEAK, BASTARD"])
+dark_sounds_list = Array[AudioStreamMP3]([ExtResource("12_km32i"), ExtResource("13_q8bhj")])

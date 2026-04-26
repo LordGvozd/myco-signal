@@ -1,9 +1,18 @@
 extends Area2D
 
-@export var messages_list: Array[String]
-@export var dark_messages_list: Array[String]
-
 @export var sprite: AnimatedSprite2D
+
+@export_group("Base messages")
+@export var messages_list: Array[String]
+@export var sounds_list: Array[AudioStreamMP3]
+
+@export_group("Random messages")
+@export var random_messages_list: Array[String]
+@export var random_sounds_list: Array[AudioStreamMP3]
+
+@export_group("Dark messages")
+@export var dark_messages_list: Array[String]
+@export var dark_sounds_list: Array[AudioStreamMP3]
 
 @onready var message = $"DialogBubble/Label"
 
@@ -13,6 +22,7 @@ var current_index: int = 0
 var _is_player_in: bool = false
 var _printing: bool = false
 var _show_mark: bool = true
+var _is_dark: bool = false
 
 func _ready() -> void:
 	message_text = messages_list[0]
@@ -23,8 +33,10 @@ func _ready() -> void:
 	
 	Bus.subscribe(MoodChangedEvent, func(e):
 		sprite.play("dark")
-		messages_list = dark_messages_list
+		random_messages_list = dark_messages_list
+		random_sounds_list = dark_sounds_list
 		_show_mark = false
+		_is_dark = true
 )
 
 func _process(delta: float) -> void:
@@ -32,6 +44,12 @@ func _process(delta: float) -> void:
 		next_message()
 		
 func next_message():
+	if not _show_mark:
+		current_index = randi_range(0, len(random_messages_list) - 1)
+		message_text = random_messages_list[current_index]
+		display_text()
+		return
+		
 	if current_index >= len(messages_list) - 1:
 		_show_mark = false
 		current_index = 0
@@ -41,6 +59,13 @@ func next_message():
 	display_text()
 
 func display_text() -> void:
+	# Play sound
+	if _show_mark:
+		$SoundsPlayer.stream = sounds_list[current_index]
+	else:
+		$SoundsPlayer.stream = random_sounds_list[current_index]
+	$SoundsPlayer.play()
+	
 	message.text = ""
 	$"DialogBubble/Label".visible = true
 	$"DialogBubble/TextureRect".visible = true

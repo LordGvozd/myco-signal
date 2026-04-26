@@ -129,5 +129,8 @@ scale = Vector2(2.4530964, 2.4530964)
 pivot_offset = Vector2(22.675133, 17.416328)
 texture = ExtResource("4_7n8xq")
 
+[node name="SoundsPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1457960036]
+max_distance = 145.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

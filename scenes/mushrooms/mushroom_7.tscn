@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dhls283o8fatw" path="res://sprites/mushrooms/mushroom2.png" id="1_lxxhs"]
 [ext_resource type="Script" uid="uid://xi67iyfedoaa" path="res://scripts/mushroom_1.gd" id="2_hw3q4"]
 [ext_resource type="Script" uid="uid://bbavpsg2nr4uh" path="res://scripts/Melody.gd" id="3_82725"]
-[ext_resource type="AudioStream" uid="uid://cli34hdnpb3g4" path="res://sounds/silence.mp3" id="4_hw3q4"]
+[ext_resource type="AudioStream" uid="uid://df7374r8spsb7" path="res://sounds/huh-cat-meme.mp3" id="4_hw3q4"]
 [ext_resource type="Material" uid="uid://fq5o1o21f4ut" path="res://shader/boom.tres" id="5_82725"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d8f48"]

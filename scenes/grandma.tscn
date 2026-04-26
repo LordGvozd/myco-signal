@@ -3,6 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://crvit8p2451o1" path="res://sprites/NPC/negranny_idle1-sheet.png" id="1_5ae1h"]
 [ext_resource type="Texture2D" uid="uid://8tmgajlqlpst" path="res://sprites/NPC/granny_idle1-sheet.png" id="1_ksdnf"]
 [ext_resource type="PackedScene" uid="uid://c7wolat0rlk8a" path="res://scenes/npc.tscn" id="2_cfwya"]
+[ext_resource type="AudioStream" uid="uid://de68tjoo3d88q" path="res://sounds/NPC/granny/granny-no.mp3" id="4_dxidy"]
+[ext_resource type="AudioStream" uid="uid://3kuxajukm55p" path="res://sounds/NPC/granny/shovel1.mp3" id="5_v2ny7"]
+[ext_resource type="AudioStream" uid="uid://twobed27eb61" path="res://sounds/NPC/granny/shovel2.mp3" id="6_jx84c"]
+[ext_resource type="AudioStream" uid="uid://dwiwn6trcpvcb" path="res://sounds/NPC/granny/shovel3.mp3" id="7_f6ktl"]
+[ext_resource type="AudioStream" uid="uid://b1d7ehj40ixjs" path="res://sounds/NPC/granny/angry_laughmp3.mp3" id="8_f6ktl"]
+[ext_resource type="AudioStream" uid="uid://bp53v4dmh4ch8" path="res://sounds/NPC/granny/potato.mp3" id="8_giqsy"]
+[ext_resource type="AudioStream" uid="uid://cx3dm77mf0ujs" path="res://sounds/NPC/granny/what.mp3" id="9_giqsy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_giqsy"]
 atlas = ExtResource("1_5ae1h")
@@ -146,5 +153,10 @@ autoplay = "default"
 shape = SubResource("CapsuleShape2D_nvcgb")
 
 [node name="NPC" parent="." unique_id=907039592 node_paths=PackedStringArray("sprite") instance=ExtResource("2_cfwya")]
-messages_list = Array[String](["My beloved grandson", " got the hell out of the garden!!", "Before I hit you in the ass with a hoe"])
 sprite = NodePath("../AnimatedSprite2D")
+messages_list = Array[String](["My beloved grandson", " got the hell out of the garden!!", "Before I hit you in the ass with a hoe"])
+sounds_list = Array[AudioStreamMP3]([ExtResource("4_dxidy"), ExtResource("5_v2ny7"), ExtResource("6_jx84c"), ExtResource("7_f6ktl")])
+random_messages_list = Array[String](["I love potato"])
+random_sounds_list = Array[AudioStreamMP3]([ExtResource("8_giqsy")])
+dark_messages_list = Array[String](["GO TO PEAK, BASTARD", "Spores done took root"])
+dark_sounds_list = Array[AudioStreamMP3]([ExtResource("8_f6ktl"), ExtResource("9_giqsy")])
