@@ -1,12 +1,40 @@
 [gd_scene format=3 uid="uid://mm8esk324vd5"]
 
-[ext_resource type="Texture2D" uid="uid://cbcuist6yh487" path="res://sprites/dialog_bubble.png" id="1_6011h"]
+[ext_resource type="Texture2D" uid="uid://7adrb8b6c4ry" path="res://sprites/NPC/neboy_idle1-sheet.png" id="1_6011h"]
 [ext_resource type="Texture2D" uid="uid://dnn3tic15tswb" path="res://sprites/NPC/boy_idle1-sheet.png" id="1_f22sb"]
-[ext_resource type="Script" uid="uid://b22gpap1h7kp1" path="res://scripts/boy.gd" id="2_ee6vw"]
+[ext_resource type="PackedScene" uid="uid://c7wolat0rlk8a" path="res://scenes/npc.tscn" id="2_ee6vw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6011h"]
-font_size = 24
-font_color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y3jj"]
+atlas = ExtResource("1_6011h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f46kg"]
+atlas = ExtResource("1_6011h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opt0h"]
+atlas = ExtResource("1_6011h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca41k"]
+atlas = ExtResource("1_6011h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw103"]
+atlas = ExtResource("1_6011h")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8es0"]
+atlas = ExtResource("1_6011h")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3cot"]
+atlas = ExtResource("1_6011h")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkxj3"]
+atlas = ExtResource("1_6011h")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6vw"]
 atlas = ExtResource("1_f22sb")
@@ -42,6 +70,35 @@ region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7y3jj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y3jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f46kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opt0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca41k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw103")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8es0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3cot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkxj3")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -81,46 +138,13 @@ animations = [{
 radius = 4.0
 height = 8.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22sb"]
-size = Vector2(90, 61)
-
 [node name="Boy" type="Node2D" unique_id=901870445]
-
-[node name="DialogBubble" type="Control" parent="." unique_id=2097936046]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.000015
-offset_top = -53.0
-offset_right = 166.99998
-offset_bottom = 144.0
-scale = Vector2(0.17779721, 0.17779721)
-
-[node name="TextureRect" type="TextureRect" parent="DialogBubble" unique_id=1436988636]
-texture_filter = 1
-layout_mode = 0
-offset_left = 6.0
-offset_top = -9.0
-offset_right = 372.0
-offset_bottom = 238.0
-texture = ExtResource("1_6011h")
-
-[node name="Label" type="Label" parent="DialogBubble" unique_id=94653440]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 43.0
-offset_right = 337.0
-offset_bottom = 154.0
-text = "five, six, seven"
-label_settings = SubResource("LabelSettings_6011h")
-autowrap_mode = 1
-clip_text = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1015827059]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7y3jj")
-animation = &"new_animation"
+animation = &"dark"
 autoplay = "new_animation"
-frame = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=119021246]
 
@@ -128,13 +152,5 @@ frame = 1
 position = Vector2(-1, 3)
 shape = SubResource("CapsuleShape2D_f46kg")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1308100819]
-script = ExtResource("2_ee6vw")
-message_text = "five, six, seven...."
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=997947358]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_f22sb")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="NPC" parent="." unique_id=907039592 node_paths=PackedStringArray("sprite") instance=ExtResource("2_ee6vw")]
+sprite = NodePath("../AnimatedSprite2D")

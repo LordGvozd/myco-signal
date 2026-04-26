@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://c7wolat0rlk8a"]
+
+[ext_resource type="Script" uid="uid://b22gpap1h7kp1" path="res://scripts/boy.gd" id="1_rv78h"]
+[ext_resource type="Texture2D" uid="uid://cbcuist6yh487" path="res://sprites/dialog_bubble.png" id="2_7n8xq"]
+[ext_resource type="FontFile" uid="uid://xq1xqblrc4ba" path="res://fonts/VCROSDMono[NolivantNTEdit]-Regular.ttf" id="3_4wlns"]
+[ext_resource type="Texture2D" uid="uid://hwhvb4wkbktn" path="res://sprites/exclemention_mark.png" id="4_7n8xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22sb"]
+size = Vector2(90, 61)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6011h"]
+font = ExtResource("3_4wlns")
+font_size = 32
+font_color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+
+[sub_resource type="Animation" id="Animation_7n8xq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(337.463, 23.815)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44.950012, 36.985016)]
+}
+
+[sub_resource type="Animation" id="Animation_4wlns"]
+resource_name = "based"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(366.653, 150), Vector2(384.33, 24.22), Vector2(366.653, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(50, 30), Vector2(34.51, 38.78), Vector2(50, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tl2vt"]
+_data = {
+&"RESET": SubResource("Animation_7n8xq"),
+&"based": SubResource("Animation_4wlns")
+}
+
+[node name="NPC" type="Area2D" unique_id=907039592]
+script = ExtResource("1_rv78h")
+messages_list = Array[String](["..four, five..", "six, seven....", "SIX SEVEN SIX SEVEN "])
+dark_messages_list = Array[String](["GO TO PEAK, BASTARD"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=129783442]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_f22sb")
+
+[node name="DialogBubble" type="Control" parent="." unique_id=1120536304]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.000015
+offset_top = -53.0
+offset_right = 166.99998
+offset_bottom = 144.0
+scale = Vector2(0.17779721, 0.17779721)
+
+[node name="TextureRect" type="TextureRect" parent="DialogBubble" unique_id=1539128018]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 372.0
+offset_bottom = 238.0
+texture = ExtResource("2_7n8xq")
+
+[node name="Label" type="Label" parent="DialogBubble" unique_id=412255477]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 43.0
+offset_right = 337.0
+offset_bottom = 154.0
+text = "kabzda velikaya stop stope balalayka jopa popa loh"
+label_settings = SubResource("LabelSettings_6011h")
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBubble" unique_id=1451173840]
+root_node = NodePath("../TextureRect2")
+libraries/ = SubResource("AnimationLibrary_tl2vt")
+autoplay = &"based"
+
+[node name="TextureRect2" type="TextureRect" parent="DialogBubble" unique_id=1944537212]
+texture_filter = 1
+layout_mode = 0
+offset_left = 337.463
+offset_top = 23.815
+offset_right = 382.41302
+offset_bottom = 60.80002
+scale = Vector2(2.4530964, 2.4530964)
+pivot_offset = Vector2(22.675133, 17.416328)
+texture = ExtResource("4_7n8xq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

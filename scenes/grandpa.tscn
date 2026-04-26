@@ -1,6 +1,40 @@
-[gd_scene format=3 uid="uid://84tfhn437ilu"]
+[gd_scene format=3 uid="uid://6t1gbn5kk30l"]
 
 [ext_resource type="Texture2D" uid="uid://bx8xm7cxg83q7" path="res://sprites/NPC/grandpa_idle1-sheet.png" id="1_7wt42"]
+[ext_resource type="Texture2D" uid="uid://clsaigijqjvw1" path="res://sprites/NPC/negrandpa_idle1-sheet.png" id="1_quedy"]
+[ext_resource type="PackedScene" uid="uid://c7wolat0rlk8a" path="res://scenes/npc.tscn" id="2_hy06x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_couwx"]
+atlas = ExtResource("1_quedy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvo86"]
+atlas = ExtResource("1_quedy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv85e"]
+atlas = ExtResource("1_quedy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q652"]
+atlas = ExtResource("1_quedy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78xjs"]
+atlas = ExtResource("1_quedy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m10i5"]
+atlas = ExtResource("1_quedy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76jt5"]
+atlas = ExtResource("1_quedy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul64d"]
+atlas = ExtResource("1_quedy")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfwya"]
 atlas = ExtResource("1_7wt42")
@@ -38,6 +72,35 @@ region = Rect2(224, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_couwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvo86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv85e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q652")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78xjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m10i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76jt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul64d")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cfwya")
 }, {
 "duration": 1.0,
@@ -70,13 +133,19 @@ animations = [{
 radius = 6.0
 height = 20.0
 
-[node name="Grandma" type="Node2D" unique_id=1149326032]
+[node name="Grandpa" type="Node2D" unique_id=1149326032]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1496757348]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_giqsy")
+animation = &"dark"
+autoplay = "default"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=690943093]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1560614794]
 shape = SubResource("CapsuleShape2D_nvcgb")
+
+[node name="NPC" parent="." unique_id=907039592 node_paths=PackedStringArray("sprite") instance=ExtResource("2_hy06x")]
+messages_list = Array[String](["This is my mushroom", "I'm eating it", "AAAAAA"])
+sprite = NodePath("../AnimatedSprite2D")
