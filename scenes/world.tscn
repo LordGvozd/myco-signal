@@ -127,7 +127,6 @@ position = Vector2(-385, -1146)
 position = Vector2(1001, 605)
 
 [node name="DARK_MODE" type="Node2D" parent="." unique_id=779143329]
-visible = false
 y_sort_enabled = true
 script = ExtResource("1_7iits")
 
@@ -261,11 +260,18 @@ texture = ExtResource("39_l8ah6")
 [node name="BASE" type="Node2D" parent="." unique_id=589231974]
 y_sort_enabled = true
 
+[node name="House_1" parent="BASE" unique_id=1216615253 instance=ExtResource("7_xo05s")]
+position = Vector2(85, -88)
+
+[node name="house_2" parent="BASE" unique_id=1594624907 instance=ExtResource("7_kpybi")]
+position = Vector2(683, 80)
+
 [node name="=== NPC ===" type="Node2D" parent="BASE" unique_id=1541030936]
 y_sort_enabled = true
 
 [node name="=== TREES ===" type="Node2D" parent="BASE" unique_id=1040608392]
 y_sort_enabled = true
+position = Vector2(0, -14)
 
 [node name="Tree3" parent="BASE/=== TREES ===" unique_id=372689092 instance=ExtResource("5_71j4m")]
 texture_filter = 1
@@ -298,16 +304,10 @@ texture_filter = 1
 position = Vector2(-211, 238)
 metadata/_edit_group_ = true
 
-[node name="House_1" parent="BASE/=== TREES ===" unique_id=1216615253 instance=ExtResource("7_xo05s")]
-position = Vector2(85, -88)
-
 [node name="Tree22" parent="BASE/=== TREES ===" unique_id=1464869876 instance=ExtResource("5_71j4m")]
 texture_filter = 1
 position = Vector2(-77, 246)
 metadata/_edit_group_ = true
-
-[node name="house_2" parent="BASE/=== TREES ===" unique_id=1594624907 instance=ExtResource("7_kpybi")]
-position = Vector2(683, 80)
 
 [node name="Tree9" parent="BASE/=== TREES ===" unique_id=1928856928 instance=ExtResource("5_q5onr")]
 position = Vector2(1, -119)
@@ -879,35 +879,43 @@ position = Vector2(238, 123)
 metadata/_edit_group_ = true
 
 [node name="BerezkaMnogo64" parent="BASE/=== TREES ===" unique_id=492317 instance=ExtResource("6_o8fc1")]
-z_index = 3
 texture_filter = 1
 position = Vector2(91, 67)
 
 [node name="Tree32" parent="BASE/=== TREES ===" unique_id=86464314 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(246, -130)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32" unique_id=785483717 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(-2, -191)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26" unique_id=749236148 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(-237, -128)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26" unique_id=1796315739 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(-105, -143)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26/Tree26" unique_id=1044178555 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(279, -12)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26/Tree26/Tree26" unique_id=1423859961 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(278, 246)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26/Tree26/Tree26/Tree26" unique_id=489388394 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(-59, 222)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26/Tree26/Tree26/Tree26/Tree26" unique_id=759993156 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(303, -27)
 
 [node name="Tree26" parent="BASE/=== TREES ===/Tree32/Tree26/Tree26/Tree26/Tree26/Tree26/Tree26/Tree26" unique_id=1708622128 instance=ExtResource("7_q5onr")]
+y_sort_enabled = true
 position = Vector2(-687, 274)
 
 [node name="BerezkaMnogo65" parent="BASE/=== TREES ===" unique_id=463121472 instance=ExtResource("6_o8fc1")]
@@ -981,9 +989,11 @@ position = Vector2(-107, 210)
 y_sort_enabled = true
 
 [node name="Rock_2" parent="BASE/===ENVIROMENTS===" unique_id=378429494 instance=ExtResource("8_jhx03")]
+y_sort_enabled = true
 position = Vector2(322, 28)
 
 [node name="Rock_2" parent="BASE/===ENVIROMENTS===/Rock_2" unique_id=2126803958 instance=ExtResource("8_jhx03")]
+y_sort_enabled = true
 position = Vector2(154, 293)
 
 [node name="Rock_2" parent="BASE/===ENVIROMENTS===/Rock_2/Rock_2" unique_id=533270029 instance=ExtResource("8_jhx03")]
@@ -1008,12 +1018,14 @@ position = Vector2(-102, 235)
 position = Vector2(-104, 114)
 
 [node name="Bush3" parent="BASE/===ENVIROMENTS===" unique_id=651728797 instance=ExtResource("9_o8fc1")]
+y_sort_enabled = true
 position = Vector2(-116, -95)
 
 [node name="Bush" parent="BASE/===ENVIROMENTS===/Bush3" unique_id=958332648 instance=ExtResource("9_o8fc1")]
 position = Vector2(-161, -165)
 
 [node name="Rock_1" parent="BASE/===ENVIROMENTS===" unique_id=81476445 instance=ExtResource("23_fh13f")]
+y_sort_enabled = true
 position = Vector2(-113, -2)
 
 [node name="Rock_1" parent="BASE/===ENVIROMENTS===/Rock_1" unique_id=1391006137 instance=ExtResource("23_fh13f")]
@@ -1104,4 +1116,4 @@ y_sort_enabled = true
 position = Vector2(-92, 159)
 
 [node name="Player" parent="." unique_id=1779298022 instance=ExtResource("1_nnsk1")]
-position = Vector2(-6, 204)
+position = Vector2(-60, 149)

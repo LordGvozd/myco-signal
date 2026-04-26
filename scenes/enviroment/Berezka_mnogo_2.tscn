@@ -2,16 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://h4c2yj1texs" path="res://sprites/nature/berezka_bol.png" id="1_pwqio"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwqio"]
-size = Vector2(113, 98)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_pwqio"]
+points = PackedVector2Array(-41.836426, 35.587547, -53.24636, 26.690659, -57.04967, 14.086737, -58.317444, -42.260216, 65.92407, -40.777397, 63.388527, 0, 50.710823, 37.07036)
 
 [node name="BerezkaMnogo2" type="Node2D" unique_id=1216615253]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1147016723]
+position = Vector2(0, 17)
 texture = ExtResource("1_pwqio")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1939372381]
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1939372381]
+scale = Vector2(0.7887863, 1.3487865)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1429554342]
-position = Vector2(2.5, 4)
-shape = SubResource("RectangleShape2D_pwqio")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1429554342]
+position = Vector2(1.2677704, 10.379702)
+shape = SubResource("ConvexPolygonShape2D_pwqio")

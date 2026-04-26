@@ -2,19 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://difsqsn8uknmh" path="res://sprites/nature/rock1.png" id="1_lukbo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6036f"]
-radius = 2.0
-height = 20.0
-
 [node name="Rock_1" type="Node2D" unique_id=1208810767]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1151181323]
 texture_filter = 1
 texture = ExtResource("1_lukbo")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1305237136]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1065848845]
-position = Vector2(0, 6)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_6036f")
